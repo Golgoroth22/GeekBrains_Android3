@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">A3_Falin</string>
+    <string name="counter_1">Counter 1</string>
+    <string name="count_0">Count = 0</string>
+    <string name="counter_2">Counter 2</string>
+    <string name="counter_3">Counter 3</string>
 </resources>
