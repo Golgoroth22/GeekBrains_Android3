@@ -19,10 +19,10 @@ public class Presenter {
         return currentValue + 1;
     }
 
-    public void buttonClick(int btnIndex, List<Integer> list) {
+    public void buttonClick(int btnIndex, int[] list) {
         int newModelValue;
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == btnIndex) {
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] == btnIndex) {
                 newModelValue = calcNewModelValue(i);
                 mModel.setElementValueAtIndex(i, newModelValue);
                 view.setButtonText(i + 1, newModelValue);

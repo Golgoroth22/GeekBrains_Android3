@@ -33,11 +33,8 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
 
     @Override
     public void onClick(View view) {
-        List<Integer> idList = new ArrayList<>();
-        idList.add(R.id.btnCounter1);
-        idList.add(R.id.btnCounter2);
-        idList.add(R.id.btnCounter3);
-        mPresenter.buttonClick(view.getId(), idList);
+        int[] idMass = {R.id.btnCounter1, R.id.btnCounter2, R.id.btnCounter3};
+        mPresenter.buttonClick(view.getId(), idMass);
     }
 
     @Override
