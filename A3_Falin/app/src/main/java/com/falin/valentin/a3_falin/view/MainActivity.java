@@ -8,6 +8,9 @@ import android.widget.Button;
 import com.falin.valentin.a3_falin.R;
 import com.falin.valentin.a3_falin.presenter.Presenter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements MainView, View.OnClickListener {
     private Button btnCounter1;
     private Button btnCounter2;
@@ -30,7 +33,8 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
 
     @Override
     public void onClick(View view) {
-        mPresenter.buttonClick(v.getId());
+        int[] idMass = {R.id.btnCounter1, R.id.btnCounter2, R.id.btnCounter3};
+        mPresenter.buttonClick(view.getId(), idMass);
     }
 
     @Override
