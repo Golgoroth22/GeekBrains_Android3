@@ -1,16 +1,24 @@
 package com.falin.valentin.a3_falin.presenter;
 
+import android.view.View;
+
 import com.falin.valentin.a3_falin.model.Model;
 import com.falin.valentin.a3_falin.view.MainActivity;
 
 import java.util.List;
 
 public class Presenter {
+    public interface Callback {
+        void callingBack();
+    }
+
     private Model mModel;
     private MainActivity view;
+    private Callback callback;
 
-    public Presenter(MainActivity view) {
+    public Presenter(MainActivity view, Callback callback) {
         this.mModel = new Model();
+        this.callback = callback;
         this.view = view;
     }
 
@@ -26,8 +34,11 @@ public class Presenter {
                 newModelValue = calcNewModelValue(i);
                 mModel.setElementValueAtIndex(i, newModelValue);
                 view.setButtonText(i + 1, newModelValue);
+                if (i == 0) {
+                    view.startLoading();
+                    callback.callingBack();
+                }
             }
         }
     }
-
 }
