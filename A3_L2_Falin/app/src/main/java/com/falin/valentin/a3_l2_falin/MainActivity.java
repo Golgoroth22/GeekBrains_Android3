@@ -5,17 +5,24 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
     EditText editText;
+    TextView userNickNameTextView;
+    ImageView userAvatarImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initUI();
+    }
+
+    private void initUI() {
         textView = findViewById(R.id.content_text);
         editText = findViewById(R.id.content_edit_text);
         editText.addTextChangedListener(new TextWatcher() {
@@ -32,5 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(editable.toString());
             }
         });
+        userNickNameTextView = findViewById(R.id.content_user_nickname);
+        userAvatarImageView = findViewById(R.id.content_user_image);
     }
 }
