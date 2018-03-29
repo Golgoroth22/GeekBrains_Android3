@@ -7,7 +7,7 @@
     android:layout_marginEnd="@dimen/dimen_16dp"
     android:layout_marginStart="@dimen/dimen_16dp"
     android:orientation="vertical"
-    tools:context="com.falin.valentin.a3_l2_falin.MainActivity">
+    tools:context="com.falin.valentin.a3_l2_falin.view.MainActivity">
 
     <TextView
         android:id="@+id/content_text"
@@ -37,7 +37,8 @@
         <ProgressBar
             android:id="@+id/content_load_progress_bar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
     </LinearLayout>
 
     <ImageView

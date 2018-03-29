@@ -1,7 +1,11 @@
 package com.falin.valentin.a3_l2_falin.presenter;
 
-import com.falin.valentin.a3_l2_falin.MainActivity;
-import com.falin.valentin.a3_l2_falin.data.UserData;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.widget.Toast;
+
+import com.falin.valentin.a3_l2_falin.view.MainActivity;
 import com.falin.valentin.a3_l2_falin.model.Model;
 
 public class Presenter {
@@ -21,7 +25,31 @@ public class Presenter {
     }
 
     public void loadButtonClick() {
-        String userName = model.loadUserData();
-        view.changeNickName(userName);
+        ConnectivityManager connectivityManager = (ConnectivityManager) view.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            view.showProgressBar();
+            String tempNickName = model.getUserData().getUserNickName();
+            model.loadUserData();
+            while (true) {
+                String currentNickName = model.getUserData().getUserNickName();
+                if (tempNickName.equals(currentNickName)) {
+                    System.out.println("CONTINUE");
+                    System.out.println("currentNickName - " + currentNickName);
+                    try {
+                        Thread.sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    continue;
+                }
+                view.changeNickName(currentNickName);
+                view.hideProgressBar();
+                System.out.println("BREAK");
+                break;
+            }
+        } else {
+            Toast.makeText(view, "INTERNET DISABLED", Toast.LENGTH_LONG).show();
+        }
     }
 }

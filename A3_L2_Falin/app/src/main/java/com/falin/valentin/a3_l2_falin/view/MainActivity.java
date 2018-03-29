@@ -1,4 +1,4 @@
-package com.falin.valentin.a3_l2_falin;
+package com.falin.valentin.a3_l2_falin.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.falin.valentin.a3_l2_falin.R;
 import com.falin.valentin.a3_l2_falin.model.Model;
 import com.falin.valentin.a3_l2_falin.presenter.Presenter;
 
@@ -74,5 +75,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeNickName(String newUserName) {
         userNickNameTextView.setText(newUserName);
+    }
+
+    public void showProgressBar() {
+        loadProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    public void hideProgressBar() {
+        loadProgressBar.setVisibility(View.GONE);
     }
 }
