@@ -4,14 +4,14 @@ public class UserData {
     private String userNickName;
 
     public UserData() {
-        this.userNickName = "";
+        userNickName = "";
     }
 
     public String getUserNickName() {
         return userNickName;
     }
 
-    public void setUserNickName(String userNickName) {
-        this.userNickName = userNickName;
+    public void setUserNickName(String newUserNickName) {
+        userNickName = newUserNickName;
     }
 }
