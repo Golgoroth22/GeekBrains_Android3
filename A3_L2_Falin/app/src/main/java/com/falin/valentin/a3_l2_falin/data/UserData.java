@@ -1,7 +1,7 @@
 package com.falin.valentin.a3_l2_falin.data;
 
 public class UserData {
-    private static String userNickName;
+    private String userNickName;
 
     public UserData() {
         userNickName = "";

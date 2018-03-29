@@ -34,8 +34,6 @@ public class Presenter {
             while (true) {
                 String currentNickName = model.getUserData().getUserNickName();
                 if (tempNickName.equals(currentNickName)) {
-                    System.out.println("CONTINUE");
-                    System.out.println("currentNickName - " + currentNickName);
                     try {
                         Thread.sleep(10000);
                     } catch (InterruptedException e) {
@@ -45,7 +43,6 @@ public class Presenter {
                 }
                 view.changeNickName(currentNickName);
                 view.hideProgressBar();
-                System.out.println("BREAK");
                 break;
             }
         } else {

@@ -17,7 +17,7 @@ import java.util.Set;
 
 public class Model {
     private String baseUrl = "https://api.github.com/users/mojombo";
-    private UserData userData;
+    private static UserData userData;
 
     public UserData getUserData() {
         return userData;
@@ -25,7 +25,6 @@ public class Model {
 
     public Model() {
         userData = new UserData();
-        userData.setUserNickName("Empty");
     }
 
     public void loadUserData() {
@@ -33,14 +32,6 @@ public class Model {
     }
 
     private class DownloadUserData extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected void onPostExecute(String s) {
-            System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-            userData.setUserNickName(s);
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + s);
-            super.onPostExecute(s);
-        }
 
         @Override
         protected String doInBackground(String... strings) {
@@ -78,7 +69,6 @@ public class Model {
                 byte[] result = byteArrayOutputStream.toByteArray();
                 byteArrayOutputStream.close();
                 data = new String(result);
-                System.out.println("?????????????????");
             } else {
                 data = connection.getResponseMessage() + ". Error code - " + responseCode;
             }
@@ -96,7 +86,7 @@ public class Model {
                 }
             }
         }
-        System.out.println("!?!?!??!?!?!!?!?");
+        userData.setUserNickName(data);
         return data;
     }
 }
