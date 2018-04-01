@@ -1,5 +1,6 @@
 package com.falin.valentin.a3_l2_falin.view;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -15,6 +16,15 @@ import com.falin.valentin.a3_l2_falin.R;
 import com.falin.valentin.a3_l2_falin.model.Model;
 import com.falin.valentin.a3_l2_falin.presenter.Presenter;
 
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Headers;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class MainActivity extends AppCompatActivity {
     TextView textView;
     EditText editText;
@@ -25,10 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
     private Presenter presenter;
 
+
+    private OkHttpClient okHttpClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        okHttpClient = new OkHttpClient();
 
         initUI();
         initPresenter();
@@ -84,4 +98,33 @@ public class MainActivity extends AppCompatActivity {
     public void hideProgressBar() {
         loadProgressBar.setVisibility(View.GONE);
     }
+
+    public void downloadOneUrl(Request request) {
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (!response.isSuccessful()) {
+                    throw new IOException("Unknown request code " + response);
+                }
+                Headers headers = response.headers();
+                for (int i = 0; i < headers.size(); i++) {
+                    System.out.println(headers.name(i) + ": " + headers.value(i));
+                }
+                final String data = response.body().string();
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        userNickNameTextView.setText(data);
+                        loadProgressBar.setVisibility(View.GONE);
+                    }
+                });
+            }
+        });
+    }
+
 }

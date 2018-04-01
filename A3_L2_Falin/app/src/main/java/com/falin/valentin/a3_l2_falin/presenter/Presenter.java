@@ -25,28 +25,7 @@ public class Presenter {
     }
 
     public void loadButtonClick() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) view.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()) {
-            view.showProgressBar();
-            String tempNickName = model.getUserData().getUserNickName();
-            model.loadUserData();
-            while (true) {
-                String currentNickName = model.getUserData().getUserNickName();
-                if (tempNickName.equals(currentNickName)) {
-                    try {
-                        Thread.sleep(10000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    continue;
-                }
-                view.changeNickName(currentNickName);
-                view.hideProgressBar();
-                break;
-            }
-        } else {
-            Toast.makeText(view, "INTERNET DISABLED", Toast.LENGTH_LONG).show();
-        }
+        view.showProgressBar();
+        model.loadUserData(view);
     }
 }
