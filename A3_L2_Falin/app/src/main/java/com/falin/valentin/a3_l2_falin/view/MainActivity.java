@@ -1,6 +1,5 @@
 package com.falin.valentin.a3_l2_falin.view;
 
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;

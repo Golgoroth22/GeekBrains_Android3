@@ -1,10 +1,5 @@
 package com.falin.valentin.a3_l2_falin.presenter;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.widget.Toast;
-
 import com.falin.valentin.a3_l2_falin.view.MainActivity;
 import com.falin.valentin.a3_l2_falin.model.Model;
 
