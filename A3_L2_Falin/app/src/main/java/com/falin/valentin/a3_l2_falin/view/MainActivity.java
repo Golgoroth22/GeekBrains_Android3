@@ -12,17 +12,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.falin.valentin.a3_l2_falin.R;
+import com.falin.valentin.a3_l2_falin.data.RestAPI;
+import com.falin.valentin.a3_l2_falin.data.UserPojo;
 import com.falin.valentin.a3_l2_falin.model.Model;
 import com.falin.valentin.a3_l2_falin.presenter.Presenter;
 
-import java.io.IOException;
+import java.util.List;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Headers;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
@@ -34,14 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
     private Presenter presenter;
 
+    private RestAPI restAPI;
 
-    private OkHttpClient okHttpClient;
+    //private OkHttpClient okHttpClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        okHttpClient = new OkHttpClient();
+        //okHttpClient = new OkHttpClient();
 
         initUI();
         initPresenter();
@@ -98,32 +99,59 @@ public class MainActivity extends AppCompatActivity {
         loadProgressBar.setVisibility(View.GONE);
     }
 
-    public void downloadOneUrl(Request request) {
-        okHttpClient.newCall(request).enqueue(new Callback() {
+    public void downloadOneUrl(Call<List<UserPojo>> call) {
+        call.enqueue(new Callback<List<UserPojo>>() {
             @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
+            public void onResponse(Call<List<UserPojo>> call, Response<List<UserPojo>> response) {
+                if (response.isSuccessful()) {
+                    if (response != null) {
+                        UserPojo userPojo = null;
+                        for (int i = 0; i < response.body().size(); i++) {
+                            userPojo = response.body().get(i);
+                            userNickNameTextView.append("\nId " + userPojo.getId() +
+                                    "\nLogin " + userPojo.getLogin() +
+                                    "\nAvatar URL " + userPojo.getAvatar_url());
+                        }
+                    }
+                } else {
+                    System.out.println("onResponse error: " + response.code());
+                }
+                hideProgressBar();
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (!response.isSuccessful()) {
-                    throw new IOException("Unknown request code " + response);
-                }
-                Headers headers = response.headers();
-                for (int i = 0; i < headers.size(); i++) {
-                    System.out.println(headers.name(i) + ": " + headers.value(i));
-                }
-                final String data = response.body().string();
-                MainActivity.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        userNickNameTextView.setText(data);
-                        loadProgressBar.setVisibility(View.GONE);
-                    }
-                });
+            public void onFailure(Call<List<UserPojo>> call, Throwable t) {
+                System.out.println("onFailure " + t);
+                hideProgressBar();
             }
         });
     }
 
+//    public void downloadOneUrl(Request request) {
+//        okHttpClient.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                if (!response.isSuccessful()) {
+//                    throw new IOException("Unknown request code " + response);
+//                }
+//                Headers headers = response.headers();
+//                for (int i = 0; i < headers.size(); i++) {
+//                    System.out.println(headers.name(i) + ": " + headers.value(i));
+//                }
+//                final String data = response.body().string();
+//                MainActivity.this.runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        userNickNameTextView.setText(data);
+//                        loadProgressBar.setVisibility(View.GONE);
+//                    }
+//                });
+//            }
+//        });
+//    }
 }
