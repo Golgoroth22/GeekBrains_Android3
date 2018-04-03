@@ -14,8 +14,11 @@ import android.widget.TextView;
 import com.falin.valentin.a3_l2_falin.R;
 import com.falin.valentin.a3_l2_falin.data.RestAPI;
 import com.falin.valentin.a3_l2_falin.data.UserPojo;
+import com.falin.valentin.a3_l2_falin.data.image.ImageLoader;
+import com.falin.valentin.a3_l2_falin.data.image.PicassoImageLoader;
 import com.falin.valentin.a3_l2_falin.model.Model;
 import com.falin.valentin.a3_l2_falin.presenter.Presenter;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Presenter presenter;
 
-    private RestAPI restAPI;
+    private ImageLoader<ImageView> imageLoader;
 
     //private OkHttpClient okHttpClient;
 
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         initUI();
         initPresenter();
+        imageLoader = new PicassoImageLoader(Picasso.with(this));
     }
 
     private void initPresenter() {
@@ -139,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
                         userNickNameTextView.append("\nId " + userPojo.getId() +
                                 "\nLogin " + userPojo.getLogin() +
                                 "\nAvatar URL " + userPojo.getAvatar_url());
+                        imageLoader.downloadInfo(userPojo.getAvatar_url(), userAvatarImageView);
                     }
                 } else {
                     System.out.println("onResponse error: " + response.code());
