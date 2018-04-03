@@ -8,5 +8,5 @@ import retrofit2.http.Path;
 
 public interface RestAPIforUser {
     @GET("users/{user}")
-    Call<List<UserPojo>> loadUserData(@Path("user") String user);
+    Call<UserPojo> loadUserData(@Path("user") String user);
 }

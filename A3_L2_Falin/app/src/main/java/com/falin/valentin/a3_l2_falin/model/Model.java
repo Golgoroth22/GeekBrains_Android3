@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 import android.widget.Toast;
 
 import com.falin.valentin.a3_l2_falin.data.RestAPI;
+import com.falin.valentin.a3_l2_falin.data.RestAPIforUser;
 import com.falin.valentin.a3_l2_falin.data.UserData;
 import com.falin.valentin.a3_l2_falin.data.UserPojo;
 import com.falin.valentin.a3_l2_falin.view.MainActivity;
@@ -22,9 +23,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Model {
     private String baseUrl = "https://api.github.com/";
+    private String userLogin = "Golgoroth22";
     private HttpUrl.Builder urlBuilder;
     private static UserData userData;
     private RestAPI restAPI;
+    private RestAPIforUser restAPIforUser;
 
     public UserData getUserData() {
         return userData;
@@ -41,12 +44,13 @@ public class Model {
                     .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            this.restAPI = retrofit.create(RestAPI.class);
+            this.restAPIforUser = retrofit.create(RestAPIforUser.class);
+            //this.restAPI = retrofit.create(RestAPI.class);  For all users
         } catch (Exception e) {
             System.out.println("NO RETROFIT!");
             return;
         }
-        Call<List<UserPojo>> call = restAPI.loadUsers();
+        Call<UserPojo> call = restAPIforUser.loadUserData(userLogin);
         ConnectivityManager connectivityManager = (ConnectivityManager) view.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {

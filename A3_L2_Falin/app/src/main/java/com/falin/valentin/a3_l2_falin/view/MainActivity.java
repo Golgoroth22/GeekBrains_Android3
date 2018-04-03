@@ -99,19 +99,46 @@ public class MainActivity extends AppCompatActivity {
         loadProgressBar.setVisibility(View.GONE);
     }
 
-    public void downloadOneUrl(Call<List<UserPojo>> call) {
-        call.enqueue(new Callback<List<UserPojo>>() {
+    // For List Result
+//    public void downloadOneUrl(Call<List<UserPojo>> call) {
+//        call.enqueue(new Callback<List<UserPojo>>() {
+//            @Override
+//            public void onResponse(Call<List<UserPojo>> call, Response<List<UserPojo>> response) {
+//                if (response.isSuccessful()) {
+//                    if (response != null) {
+//                        UserPojo userPojo = null;
+//                        for (int i = 0; i < response.body().size(); i++) {
+//                            System.out.println("!!!!!!!!!!!!!!!!!!!!!!! " + i);
+//                            userPojo = response.body().get(i);
+//                            userNickNameTextView.append("\nId " + userPojo.getId() +
+//                                    "\nLogin " + userPojo.getLogin() +
+//                                    "\nAvatar URL " + userPojo.getAvatar_url());
+//                        }
+//                    }
+//                } else {
+//                    System.out.println("onResponse error: " + response.code());
+//                }
+//                hideProgressBar();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<UserPojo>> call, Throwable t) {
+//                System.out.println("onFailure " + t);
+//                hideProgressBar();
+//            }
+//        });
+//    }
+
+    public void downloadOneUrl(Call<UserPojo> call) {
+        call.enqueue(new Callback<UserPojo>() {
             @Override
-            public void onResponse(Call<List<UserPojo>> call, Response<List<UserPojo>> response) {
+            public void onResponse(Call<UserPojo> call, Response<UserPojo> response) {
                 if (response.isSuccessful()) {
                     if (response != null) {
-                        UserPojo userPojo = null;
-                        for (int i = 0; i < response.body().size(); i++) {
-                            userPojo = response.body().get(i);
-                            userNickNameTextView.append("\nId " + userPojo.getId() +
-                                    "\nLogin " + userPojo.getLogin() +
-                                    "\nAvatar URL " + userPojo.getAvatar_url());
-                        }
+                        UserPojo userPojo = response.body();
+                        userNickNameTextView.append("\nId " + userPojo.getId() +
+                                "\nLogin " + userPojo.getLogin() +
+                                "\nAvatar URL " + userPojo.getAvatar_url());
                     }
                 } else {
                     System.out.println("onResponse error: " + response.code());
@@ -120,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<UserPojo>> call, Throwable t) {
+            public void onFailure(Call<UserPojo> call, Throwable t) {
                 System.out.println("onFailure " + t);
                 hideProgressBar();
             }
