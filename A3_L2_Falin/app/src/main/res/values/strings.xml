@@ -2,4 +2,7 @@
     <string name="app_name">A3_L2_Falin</string>
     <string name="text">Text</string>
     <string name="user_avatar">User Avatar</string>
+    <string name="load">Load</string>
+    <string name="save">Save</string>
+    <string name="clear">Clear</string>
 </resources>

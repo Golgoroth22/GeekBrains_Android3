@@ -22,6 +22,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -104,13 +106,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // For List Result
-//    public void downloadOneUrl(Call<List<UserPojo>> call) {
-//        call.enqueue(new Callback<List<UserPojo>>() {
+//    public void downloadOneUrl(Call<List<UserRealmPojo>> call) {
+//        call.enqueue(new Callback<List<UserRealmPojo>>() {
 //            @Override
-//            public void onResponse(Call<List<UserPojo>> call, Response<List<UserPojo>> response) {
+//            public void onResponse(Call<List<UserRealmPojo>> call, Response<List<UserRealmPojo>> response) {
 //                if (response.isSuccessful()) {
 //                    if (response != null) {
-//                        UserPojo userPojo = null;
+//                        UserRealmPojo userPojo = null;
 //                        for (int i = 0; i < response.body().size(); i++) {
 //                            System.out.println("!!!!!!!!!!!!!!!!!!!!!!! " + i);
 //                            userPojo = response.body().get(i);
@@ -126,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //
 //            @Override
-//            public void onFailure(Call<List<UserPojo>> call, Throwable t) {
+//            public void onFailure(Call<List<UserRealmPojo>> call, Throwable t) {
 //                System.out.println("onFailure " + t);
 //                hideProgressBar();
 //            }
