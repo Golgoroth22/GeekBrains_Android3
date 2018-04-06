@@ -11,19 +11,30 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import io.reactivex.Scheduler;
+import io.reactivex.Single;
+import io.reactivex.SingleEmitter;
+import io.reactivex.SingleOnSubscribe;
+import io.reactivex.schedulers.Schedulers;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+
 import com.falin.valentin.a3_l2_falin.R;
 import com.falin.valentin.a3_l2_falin.data.RestAPI;
 import com.falin.valentin.a3_l2_falin.data.UserPojo;
 import com.falin.valentin.a3_l2_falin.data.image.ImageLoader;
 import com.falin.valentin.a3_l2_falin.data.image.PicassoImageLoader;
+import com.falin.valentin.a3_l2_falin.data.realm.UserRealmPojo;
 import com.falin.valentin.a3_l2_falin.model.Model;
 import com.falin.valentin.a3_l2_falin.presenter.Presenter;
 import com.squareup.picasso.Picasso;
 
+import java.util.Date;
 import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmModel;
+import io.realm.RealmResults;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
     TextView userNickNameTextView;
     ImageView userAvatarImageView;
     Button loadButton;
+    Button saveToRealmButton;
+    Button loadFromRealmButton;
+    Button clearRealmButton;
     ProgressBar loadProgressBar;
 
     private Presenter presenter;
 
     private ImageLoader<ImageView> imageLoader;
+
+    UserPojo userPojo;
+    Realm realm;
 
     //private OkHttpClient okHttpClient;
 
@@ -87,6 +104,63 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         loadProgressBar = findViewById(R.id.content_load_progress_bar);
+        saveToRealmButton.findViewById(R.id.save_button);
+        saveToRealmButton.setOnClickListener(getListener());
+        loadFromRealmButton.findViewById(R.id.load_button);
+        loadFromRealmButton.setOnClickListener(getListener());
+        clearRealmButton.findViewById(R.id.clear_button);
+        clearRealmButton.setOnClickListener(getListener());
+    }
+
+    private View.OnClickListener getListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int id = view.getId();
+                switch (id) {
+                    case R.id.save_button:
+                        Single<Bundle> singleSaveAllRealm = Single.create(new SingleOnSubscribe<Bundle>() {
+                            @Override
+                            public void subscribe(SingleEmitter<Bundle> emitter) throws Exception {
+                                String curLogin = "";
+                                String curId = "";
+                                String curAvatarUrl = "";
+                                realm = Realm.getDefaultInstance();
+                                Date firstDate = new Date();
+                                curLogin = userPojo.getLogin();
+                                curId = userPojo.getId();
+                                curAvatarUrl = userPojo.getAvatar_url();
+                                try {
+                                    realm.beginTransaction();
+                                    UserRealmPojo userRealmPojo = realm.createObject(UserRealmPojo.class);
+                                    userRealmPojo.setUserId(curId);
+                                    userRealmPojo.setUserId(curId);
+                                    userRealmPojo.setAvatarUrl(curAvatarUrl);
+                                    realm.commitTransaction();
+                                } catch (Exception e) {
+                                    realm.cancelTransaction();
+                                    emitter.onError(e);
+                                    e.printStackTrace();
+                                }
+                                Date secondDate = new Date();
+                                RealmResults<UserRealmPojo> temp = realm.where(UserRealmPojo.class).findAll();
+                                Bundle bundle = new Bundle();
+                                bundle.putLong("msek", firstDate.getTime() - secondDate.getTime());
+                                emitter.onSuccess(bundle);
+                                realm.close();
+                            }
+                        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+                        //singleSaveAllRealm.subscribeWith(CreateO) todo!!!!
+                        break;
+                    case R.id.load_button:
+                        // TODO: 04.04.2018
+                        break;
+                    case R.id.clear_button:
+                        // TODO: 04.04.2018
+                        break;
+                }
+            }
+        };
     }
 
     private void loadButtonClick() {
@@ -141,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<UserPojo> call, Response<UserPojo> response) {
                 if (response.isSuccessful()) {
                     if (response != null) {
-                        UserPojo userPojo = response.body();
+                        userPojo = response.body();
                         userNickNameTextView.append("\nId " + userPojo.getId() +
                                 "\nLogin " + userPojo.getLogin() +
                                 "\nAvatar URL " + userPojo.getAvatar_url());
