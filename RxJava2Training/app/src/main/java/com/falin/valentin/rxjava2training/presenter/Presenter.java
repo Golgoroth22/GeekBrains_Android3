@@ -35,6 +35,6 @@ public class Presenter {
     }
 
     public void fourthButtonClicked() {
-        fragment.fourthButtonClicked();
+        fragment.fourthButtonClicked(model.getCount());
     }
 }

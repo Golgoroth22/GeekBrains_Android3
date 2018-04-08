@@ -171,8 +171,7 @@ public class ViewFragment extends Fragment {
                 .subscribe(observer);
     }
 
-    public void fourthButtonClicked() {
-        final String s = "11";
+    public void fourthButtonClicked(final String s) {
         clearTextView();
         Observable.fromCallable(new Callable<Integer>() {
             @Override
