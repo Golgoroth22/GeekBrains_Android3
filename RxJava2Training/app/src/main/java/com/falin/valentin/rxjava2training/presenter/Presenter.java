@@ -33,4 +33,8 @@ public class Presenter {
         Observable<Long> longObserver = model.getLongObserver();
         fragment.thirdButtonClicked(longObserver);
     }
+
+    public void fourthButtonClicked() {
+        fragment.fourthButtonClicked();
+    }
 }

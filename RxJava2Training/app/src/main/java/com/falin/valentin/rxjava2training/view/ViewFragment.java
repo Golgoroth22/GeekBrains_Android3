@@ -10,8 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.falin.valentin.rxjava2training.R;
+import com.falin.valentin.rxjava2training.model.CallableLongAction;
 import com.falin.valentin.rxjava2training.model.Model;
 import com.falin.valentin.rxjava2training.presenter.Presenter;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -71,6 +75,12 @@ public class ViewFragment extends Fragment {
             }
         });
         fourthButton = view.findViewById(R.id.fourth_button);
+        fourthButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.fourthButtonClicked();
+            }
+        });
         fifthButton = view.findViewById(R.id.fifth_button);
         sixthButton = view.findViewById(R.id.sixth_button);
         textView = view.findViewById(R.id.text);
@@ -159,5 +169,49 @@ public class ViewFragment extends Fragment {
         longObserver.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(observer);
+    }
+
+    public void fourthButtonClicked() {
+        final String s = "11";
+        clearTextView();
+        Observable.fromCallable(new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                return longAction(s);
+            }
+        }).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        textView.append("- onSubscribe method " + d + "\n");
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+                        textView.append("- onNext method " + integer + "\n");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        textView.append("- onError method " + e + "\n");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        textView.append("- onComplete method.");
+                    }
+                });
+    }
+
+    private int longAction(String text) {
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return Integer.parseInt(text);
     }
 }
