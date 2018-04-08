@@ -24,6 +24,9 @@ public class ViewFragment extends Fragment {
     Button firstButton;
     Button secondButton;
     Button thirdButton;
+    Button fourthButton;
+    Button fifthButton;
+    Button sixthButton;
     TextView textView;
     ImageView imageView;
 
@@ -67,6 +70,9 @@ public class ViewFragment extends Fragment {
                 presenter.thirdButtonClicked();
             }
         });
+        fourthButton = view.findViewById(R.id.fourth_button);
+        fifthButton = view.findViewById(R.id.fifth_button);
+        sixthButton = view.findViewById(R.id.sixth_button);
         textView = view.findViewById(R.id.text);
         imageView = view.findViewById(R.id.image);
     }
