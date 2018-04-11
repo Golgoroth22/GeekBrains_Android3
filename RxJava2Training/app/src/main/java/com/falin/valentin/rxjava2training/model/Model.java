@@ -4,7 +4,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import io.reactivex.Observer;
 
 public class Model {
     private Observable<String> stringObservable;
@@ -12,6 +11,7 @@ public class Model {
     private Observable<Long> longObserver;
     private String count;
     private Callable<Integer> integerCallable;
+    private String[] stringMass;
 
     public Model() {
         stringObservable = Observable.fromArray("One", "Two", "Three");
@@ -24,6 +24,7 @@ public class Model {
                 return longAction(count);
             }
         };
+        stringMass = new String[]{"1", "2", "3", "4", "5", "6"};
     }
 
     public Observable<String> getStringObservable() {
@@ -42,13 +43,16 @@ public class Model {
         return integerCallable;
     }
 
-    private int longAction(String text) {
+    public int longAction(String text) {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         return Integer.parseInt(text);
+    }
+
+    public String[] getStringMass() {
+        return stringMass;
     }
 }

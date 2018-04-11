@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
@@ -82,6 +83,12 @@ public class ViewFragment extends Fragment {
             }
         });
         fifthButton = view.findViewById(R.id.fifth_button);
+        fifthButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.fifthButtonClicked();
+            }
+        });
         sixthButton = view.findViewById(R.id.sixth_button);
         textView = view.findViewById(R.id.text);
         imageView = view.findViewById(R.id.image);
@@ -197,5 +204,40 @@ public class ViewFragment extends Fragment {
                         textView.append("- onComplete method.");
                     }
                 });
+    }
+
+    public void fifthButtonClicked(String[] stringMass) {
+        Function<String, Integer> function = new Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) throws Exception {
+                return Integer.parseInt(s);
+            }
+        };
+
+        Observable<Integer> observable = Observable
+                .fromArray(stringMass)
+                .map(function);
+        Observer<Integer> observer = new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                textView.append("- onNext method " + integer + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append("- onComplete method.");
+            }
+        };
+        observable.subscribe(observer);
     }
 }

@@ -16,7 +16,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7"
-            android:backgroundTint="@android:color/holo_blue_bright" />
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="@string/from" />
 
         <TextView
             android:layout_width="0dp"
@@ -29,7 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="7"
             android:backgroundTint="@android:color/holo_blue_bright"
-            android:elevation="10dp" />
+            android:elevation="10dp"
+            android:text="@string/range" />
 
         <TextView
             android:layout_width="0dp"
@@ -41,7 +43,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7"
-            android:backgroundTint="@android:color/holo_blue_bright" />
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="@string/interval" />
 
     </LinearLayout>
 
@@ -54,7 +57,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7"
-            android:backgroundTint="@android:color/holo_blue_bright" />
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="@string/callable" />
 
         <TextView
             android:layout_width="0dp"
@@ -67,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="7"
             android:backgroundTint="@android:color/holo_blue_bright"
-            android:elevation="10dp" />
+            android:text="@string/string_integer" />
 
         <TextView
             android:layout_width="0dp"
@@ -85,8 +89,8 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="@dimen/dimen_170dp"
-        android:layout_height="@dimen/dimen_170dp"
+        android:layout_width="@dimen/dimen_130dp"
+        android:layout_height="@dimen/dimen_130dp"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/dimen_16dp"
         android:background="@drawable/shape"

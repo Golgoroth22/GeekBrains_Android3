@@ -1,11 +1,12 @@
 package com.falin.valentin.rxjava2training.presenter;
 
-import android.view.View;
-
 import com.falin.valentin.rxjava2training.model.Model;
 import com.falin.valentin.rxjava2training.view.ViewFragment;
 
 import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 
 public class Presenter {
     private Model model;
@@ -36,5 +37,10 @@ public class Presenter {
 
     public void fourthButtonClicked() {
         fragment.fourthButtonClicked(model.getIntegerCallable());
+    }
+
+    public void fifthButtonClicked() {
+        String[] stringMass = model.getStringMass();
+        fragment.fifthButtonClicked(stringMass);
     }
 }
