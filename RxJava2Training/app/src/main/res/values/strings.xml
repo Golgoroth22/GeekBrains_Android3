@@ -5,4 +5,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="image">image</string>
     <string name="test_text">TEST TEXT</string>
+    <string name="callable">из Callable</string>
+    <string name="interval">interval</string>
+    <string name="range">range</string>
+    <string name="from">from</string>
+    <string name="string_integer">String в Integer</string>
+    <string name="buffer">buffer</string>
 </resources>

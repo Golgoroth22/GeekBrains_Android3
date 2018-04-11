@@ -10,12 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.falin.valentin.rxjava2training.R;
+import com.falin.valentin.rxjava2training.model.CallableLongAction;
 import com.falin.valentin.rxjava2training.model.Model;
 import com.falin.valentin.rxjava2training.presenter.Presenter;
+
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
@@ -71,8 +77,26 @@ public class ViewFragment extends Fragment {
             }
         });
         fourthButton = view.findViewById(R.id.fourth_button);
+        fourthButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.fourthButtonClicked();
+            }
+        });
         fifthButton = view.findViewById(R.id.fifth_button);
+        fifthButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.fifthButtonClicked();
+            }
+        });
         sixthButton = view.findViewById(R.id.sixth_button);
+        sixthButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.sixthButtonClicked();
+            }
+        });
         textView = view.findViewById(R.id.text);
         imageView = view.findViewById(R.id.image);
     }
@@ -159,5 +183,97 @@ public class ViewFragment extends Fragment {
         longObserver.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(observer);
+    }
+
+    public void fourthButtonClicked(Callable<Integer> callable) {
+        clearTextView();
+        Observable.fromCallable(callable)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        textView.append("- onSubscribe method " + d + "\n");
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+                        textView.append("- onNext method " + integer + "\n");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        textView.append("- onError method " + e + "\n");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        textView.append("- onComplete method.");
+                    }
+                });
+    }
+
+    public void fifthButtonClicked(String[] stringMass) {
+        Function<String, Integer> function = new Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) throws Exception {
+                return Integer.parseInt(s);
+            }
+        };
+
+        Observable<Integer> observable = Observable
+                .fromArray(stringMass)
+                .map(function);
+        Observer<Integer> observer = new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                textView.append("- onNext method " + integer + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append("- onComplete method.");
+            }
+        };
+        observable.subscribe(observer);
+    }
+
+    public void sixButtonClicked(Integer[] integerMass) {
+        Observable<List<Integer>> observable = Observable
+                .fromArray(integerMass)
+                .buffer(integerMass.length % 3);
+
+        Observer<List<Integer>> observer = new Observer<List<Integer>>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+            }
+
+            @Override
+            public void onNext(List<Integer> list) {
+                textView.append("- onNext method " + list.toString() + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append("- onComplete method.");
+            }
+        };
+        observable.subscribe(observer);
     }
 }
