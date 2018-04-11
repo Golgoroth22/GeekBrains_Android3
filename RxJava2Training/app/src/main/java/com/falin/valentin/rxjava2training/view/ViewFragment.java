@@ -171,14 +171,10 @@ public class ViewFragment extends Fragment {
                 .subscribe(observer);
     }
 
-    public void fourthButtonClicked(final String s) {
+    public void fourthButtonClicked(Callable<Integer> callable) {
         clearTextView();
-        Observable.fromCallable(new Callable<Integer>() {
-            @Override
-            public Integer call() throws Exception {
-                return longAction(s);
-            }
-        }).observeOn(AndroidSchedulers.mainThread())
+        Observable.fromCallable(callable)
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<Integer>() {
                     @Override
@@ -201,16 +197,5 @@ public class ViewFragment extends Fragment {
                         textView.append("- onComplete method.");
                     }
                 });
-    }
-
-    private int longAction(String text) {
-
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return Integer.parseInt(text);
     }
 }
