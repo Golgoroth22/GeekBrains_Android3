@@ -43,4 +43,9 @@ public class Presenter {
         String[] stringMass = model.getStringMass();
         fragment.fifthButtonClicked(stringMass);
     }
+
+    public void sixthButtonClicked() {
+        Integer[] integerMass = model.getIntegerMass();
+        fragment.sixButtonClicked(integerMass);
+    }
 }

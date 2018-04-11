@@ -14,6 +14,7 @@ import com.falin.valentin.rxjava2training.model.CallableLongAction;
 import com.falin.valentin.rxjava2training.model.Model;
 import com.falin.valentin.rxjava2training.presenter.Presenter;
 
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
@@ -90,6 +91,12 @@ public class ViewFragment extends Fragment {
             }
         });
         sixthButton = view.findViewById(R.id.sixth_button);
+        sixthButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.sixthButtonClicked();
+            }
+        });
         textView = view.findViewById(R.id.text);
         imageView = view.findViewById(R.id.image);
     }
@@ -226,6 +233,35 @@ public class ViewFragment extends Fragment {
             @Override
             public void onNext(Integer integer) {
                 textView.append("- onNext method " + integer + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append("- onComplete method.");
+            }
+        };
+        observable.subscribe(observer);
+    }
+
+    public void sixButtonClicked(Integer[] integerMass) {
+        Observable<List<Integer>> observable = Observable
+                .fromArray(integerMass)
+                .buffer(integerMass.length % 3);
+
+        Observer<List<Integer>> observer = new Observer<List<Integer>>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+            }
+
+            @Override
+            public void onNext(List<Integer> list) {
+                textView.append("- onNext method " + list.toString() + "\n");
             }
 
             @Override

@@ -55,7 +55,7 @@
         <Button
             android:id="@+id/fourth_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="7"
             android:backgroundTint="@android:color/holo_blue_bright"
             android:text="@string/callable" />
@@ -68,7 +68,7 @@
         <Button
             android:id="@+id/fifth_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="7"
             android:backgroundTint="@android:color/holo_blue_bright"
             android:text="@string/string_integer" />
@@ -81,9 +81,10 @@
         <Button
             android:id="@+id/sixth_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:layout_weight="7"
-            android:backgroundTint="@android:color/holo_blue_bright" />
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="@string/buffer" />
 
     </LinearLayout>
 

@@ -12,6 +12,7 @@ public class Model {
     private String count;
     private Callable<Integer> integerCallable;
     private String[] stringMass;
+    private Integer[] integerMass;
 
     public Model() {
         stringObservable = Observable.fromArray("One", "Two", "Three");
@@ -25,6 +26,7 @@ public class Model {
             }
         };
         stringMass = new String[]{"1", "2", "3", "4", "5", "6"};
+        integerMass = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8};
     }
 
     public Observable<String> getStringObservable() {
@@ -54,5 +56,9 @@ public class Model {
 
     public String[] getStringMass() {
         return stringMass;
+    }
+
+    public Integer[] getIntegerMass() {
+        return integerMass;
     }
 }
