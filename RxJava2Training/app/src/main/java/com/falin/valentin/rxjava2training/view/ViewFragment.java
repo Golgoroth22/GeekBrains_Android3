@@ -22,6 +22,7 @@ import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
@@ -36,6 +37,9 @@ public class ViewFragment extends Fragment {
     Button seventhButton;
     Button eighthButton;
     Button ninthButton;
+    Button tenthButton;
+    Button eleventhButton;
+    Button twelfthButton;
     TextView textView;
     ImageView imageView;
 
@@ -73,7 +77,13 @@ public class ViewFragment extends Fragment {
         seventhButton = view.findViewById(R.id.seventh_button);
         seventhButton.setOnClickListener(v -> presenter.seventhButtonClicked());
         eighthButton = view.findViewById(R.id.eighth_button);
+        eighthButton.setOnClickListener(v -> presenter.eighthButtonClicked());
         ninthButton = view.findViewById(R.id.ninth_button);
+        ninthButton.setOnClickListener(v -> presenter.ninthButtonClicked());
+        tenthButton = view.findViewById(R.id.tenth_button);
+        tenthButton.setOnClickListener(v -> presenter.tenthButtonClicked());
+        eleventhButton = view.findViewById(R.id.eleventh_button);
+        eleventhButton.setOnClickListener(v -> presenter.eleventhButtonClicked());
         textView = view.findViewById(R.id.text);
         imageView = view.findViewById(R.id.image);
     }
@@ -264,6 +274,148 @@ public class ViewFragment extends Fragment {
                 textView.append("- onSubscribe method " + d + "\n");
                 textView.append("MassSize - " + integerMass.length + "\n");
                 textView.append("Elements take - " + (integerMass.length - 2) + "\n");
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                textView.append("- onNext method " + integer + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append("- onComplete method.");
+            }
+        };
+        observable.subscribe(observer);
+    }
+
+    public void eighthButtonClicked(Integer[] integerMass) {
+        clearTextView();
+        Observable<Integer> observable = Observable
+                .fromArray(integerMass)
+                .skip(2);
+        Observer<Integer> observer = new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+                textView.append("Mass - ");
+                for (Integer i : integerMass) {
+                    textView.append(" " + i);
+                }
+                textView.append("\n");
+                textView.append("Elements skip - " + (2) + "\n");
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                textView.append("- onNext method " + integer + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append("- onComplete method.");
+            }
+        };
+        observable.subscribe(observer);
+    }
+
+    public void ninthButtonClicked(Integer[] integerMass) {
+        clearTextView();
+        Observable<Integer> observable = Observable
+                .fromArray(integerMass)
+                .distinct();
+        Observer<Integer> observer = new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+                textView.append("Mass - ");
+                for (Integer i : integerMass) {
+                    textView.append(" " + i);
+                }
+                textView.append("\n");
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                textView.append("- onNext method " + integer + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append("- onComplete method.");
+            }
+        };
+        observable.subscribe(observer);
+    }
+
+    public void tenthButtonClicked(Predicate<String> predicate, String[] stringMass) {
+        clearTextView();
+        Observable<String> observable = Observable
+                .fromArray(stringMass)
+                .filter(predicate);
+        Observer<String> observer = new Observer<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+                textView.append("Mass - ");
+                for (String s : stringMass) {
+                    textView.append(" " + s);
+                }
+                textView.append("\nFilter 1 and 3\n");
+            }
+
+            @Override
+            public void onNext(String s) {
+                textView.append("- onNext method " + s + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append("- onComplete method.");
+            }
+        };
+        observable.subscribe(observer);
+    }
+
+    public void eleventhButtonClicked(Integer[] integerMass, Integer[] integerDuplicateMass) {
+        clearTextView();
+        textView.append("1\n1\n1\n1\n1\n1\n");
+        Observable<Integer> observable = Observable
+                .fromArray(integerMass)
+                .mergeWith(Observable.fromArray(integerDuplicateMass));
+        Observer<Integer> observer = new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+                textView.append("Mass1 - ");
+                for (Integer i : integerMass) {
+                    textView.append(" " + i);
+                }
+                textView.append("\nMass2 - ");
+                for (Integer i : integerDuplicateMass) {
+                    textView.append(" " + i);
+                }
+                textView.append("\n");
             }
 
             @Override

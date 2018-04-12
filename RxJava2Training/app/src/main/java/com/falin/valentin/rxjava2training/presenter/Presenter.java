@@ -4,6 +4,8 @@ import com.falin.valentin.rxjava2training.model.Model;
 import com.falin.valentin.rxjava2training.view.ViewFragment;
 
 import io.reactivex.Observable;
+import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 
 public class Presenter {
     private Model model;
@@ -48,5 +50,22 @@ public class Presenter {
 
     public void seventhButtonClicked() {
         fragment.seventhButtonClicked(model.getIntegerMass());
+    }
+
+    public void eighthButtonClicked() {
+        fragment.eighthButtonClicked(model.getIntegerMass());
+    }
+
+    public void ninthButtonClicked() {
+        fragment.ninthButtonClicked(model.getIntegerDuplicateMass());
+    }
+
+    public void tenthButtonClicked() {
+        Predicate<String> predicate = s -> !(s.equals("1") || s.equals("3"));
+        fragment.tenthButtonClicked(predicate, model.getStringMass());
+    }
+
+    public void eleventhButtonClicked() {
+        fragment.eleventhButtonClicked(model.getIntegerMass(), model.getIntegerDuplicateMass());
     }
 }

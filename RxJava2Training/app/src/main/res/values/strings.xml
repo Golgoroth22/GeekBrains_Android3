@@ -12,4 +12,8 @@
     <string name="string_integer">String в Integer</string>
     <string name="buffer">buffer</string>
     <string name="take">take</string>
+    <string name="skip">skip</string>
+    <string name="distinct">distinct</string>
+    <string name="filter">filter</string>
+    <string name="merge">merge</string>
 </resources>

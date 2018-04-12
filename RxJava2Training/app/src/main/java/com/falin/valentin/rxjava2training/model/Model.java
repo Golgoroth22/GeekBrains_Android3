@@ -13,20 +13,17 @@ public class Model {
     private Callable<Integer> integerCallable;
     private String[] stringMass;
     private Integer[] integerMass;
+    private Integer[] integerDuplicateMass;
 
     public Model() {
         stringObservable = Observable.fromArray("One", "Two", "Three");
         integerObservable = Observable.range(10, 4);
         longObserver = Observable.interval(500, TimeUnit.MILLISECONDS);
         count = "1234";
-        integerCallable = new Callable<Integer>() {
-            @Override
-            public Integer call() throws Exception {
-                return longAction(count);
-            }
-        };
+        integerCallable = () -> longAction(count);
         stringMass = new String[]{"1", "2", "3", "4", "5", "6"};
         integerMass = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8};
+        integerDuplicateMass = new Integer[]{1, 2, 3, 3, 4, 3, 12, 3};
     }
 
     public Observable<String> getStringObservable() {
@@ -60,5 +57,9 @@ public class Model {
 
     public Integer[] getIntegerMass() {
         return integerMass;
+    }
+
+    public Integer[] getIntegerDuplicateMass() {
+        return integerDuplicateMass;
     }
 }
