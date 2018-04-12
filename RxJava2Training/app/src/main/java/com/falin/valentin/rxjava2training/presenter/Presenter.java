@@ -4,9 +4,6 @@ import com.falin.valentin.rxjava2training.model.Model;
 import com.falin.valentin.rxjava2training.view.ViewFragment;
 
 import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
 
 public class Presenter {
     private Model model;
@@ -47,5 +44,9 @@ public class Presenter {
     public void sixthButtonClicked() {
         Integer[] integerMass = model.getIntegerMass();
         fragment.sixButtonClicked(integerMass);
+    }
+
+    public void seventhButtonClicked() {
+        fragment.seventhButtonClicked(model.getIntegerMass());
     }
 }

@@ -11,4 +11,5 @@
     <string name="from">from</string>
     <string name="string_integer">String в Integer</string>
     <string name="buffer">buffer</string>
+    <string name="take">take</string>
 </resources>
