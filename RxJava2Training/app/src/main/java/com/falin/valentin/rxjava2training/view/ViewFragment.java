@@ -21,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
@@ -84,6 +85,8 @@ public class ViewFragment extends Fragment {
         tenthButton.setOnClickListener(v -> presenter.tenthButtonClicked());
         eleventhButton = view.findViewById(R.id.eleventh_button);
         eleventhButton.setOnClickListener(v -> presenter.eleventhButtonClicked());
+        twelfthButton = view.findViewById(R.id.twelfth_button);
+        twelfthButton.setOnClickListener(v -> presenter.twelfthButtonClicked());
         textView = view.findViewById(R.id.text);
         imageView = view.findViewById(R.id.image);
     }
@@ -421,6 +424,44 @@ public class ViewFragment extends Fragment {
             @Override
             public void onNext(Integer integer) {
                 textView.append("- onNext method " + integer + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+
+            @Override
+            public void onComplete() {
+                textView.append("- onComplete method.");
+            }
+        };
+        observable.subscribe(observer);
+    }
+
+    public void twelfthButtonClicked(BiFunction<Integer, String, String> stringAndIntegerFunction, Integer[] integerMass, String[] stringMass) {
+        clearTextView();
+        Observable<Integer> intObservable = Observable.fromArray(integerMass);
+        Observable<String> stringObservable = Observable.fromArray(stringMass);
+        Observable<String> observable = Observable.zip(intObservable, stringObservable, stringAndIntegerFunction);
+        Observer<String> observer = new Observer<String>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+                textView.append("Integer Mass - ");
+                for (Integer i : integerMass) {
+                    textView.append(" " + i);
+                }
+                textView.append("\nString Mass - ");
+                for (String s : stringMass) {
+                    textView.append(" " + s);
+                }
+                textView.append("\n");
+            }
+
+            @Override
+            public void onNext(String s) {
+                textView.append("- onNext method " + s + "\n");
             }
 
             @Override

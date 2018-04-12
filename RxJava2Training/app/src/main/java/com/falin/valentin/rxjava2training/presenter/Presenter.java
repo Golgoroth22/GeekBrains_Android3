@@ -4,6 +4,7 @@ import com.falin.valentin.rxjava2training.model.Model;
 import com.falin.valentin.rxjava2training.view.ViewFragment;
 
 import io.reactivex.Observable;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 
@@ -67,5 +68,15 @@ public class Presenter {
 
     public void eleventhButtonClicked() {
         fragment.eleventhButtonClicked(model.getIntegerMass(), model.getIntegerDuplicateMass());
+    }
+
+    public void twelfthButtonClicked() {
+        BiFunction<Integer, String, String> stringAndIntegerFunction = new BiFunction<Integer, String, String>() {
+            @Override
+            public String apply(Integer integer, String s) throws Exception {
+                return s + " : " + integer;
+            }
+        };
+        fragment.twelfthButtonClicked(stringAndIntegerFunction, model.getIntegerDuplicateMass(), model.getStringMass());
     }
 }
