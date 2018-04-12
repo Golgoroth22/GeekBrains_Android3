@@ -4,9 +4,9 @@ import com.falin.valentin.rxjava2training.model.Model;
 import com.falin.valentin.rxjava2training.view.ViewFragment;
 
 import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 
 public class Presenter {
     private Model model;
@@ -47,5 +47,36 @@ public class Presenter {
     public void sixthButtonClicked() {
         Integer[] integerMass = model.getIntegerMass();
         fragment.sixButtonClicked(integerMass);
+    }
+
+    public void seventhButtonClicked() {
+        fragment.seventhButtonClicked(model.getIntegerMass());
+    }
+
+    public void eighthButtonClicked() {
+        fragment.eighthButtonClicked(model.getIntegerMass());
+    }
+
+    public void ninthButtonClicked() {
+        fragment.ninthButtonClicked(model.getIntegerDuplicateMass());
+    }
+
+    public void tenthButtonClicked() {
+        Predicate<String> predicate = s -> !(s.equals("1") || s.equals("3"));
+        fragment.tenthButtonClicked(predicate, model.getStringMass());
+    }
+
+    public void eleventhButtonClicked() {
+        fragment.eleventhButtonClicked(model.getIntegerMass(), model.getIntegerDuplicateMass());
+    }
+
+    public void twelfthButtonClicked() {
+        BiFunction<Integer, String, String> stringAndIntegerFunction = new BiFunction<Integer, String, String>() {
+            @Override
+            public String apply(Integer integer, String s) throws Exception {
+                return s + " : " + integer;
+            }
+        };
+        fragment.twelfthButtonClicked(stringAndIntegerFunction, model.getIntegerDuplicateMass(), model.getStringMass());
     }
 }

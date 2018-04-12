@@ -9,12 +9,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/dimen_52dp">
 
         <Button
             android:id="@+id/first_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="7"
             android:backgroundTint="@android:color/holo_blue_bright"
             android:text="@string/from" />
@@ -27,7 +27,7 @@
         <Button
             android:id="@+id/second_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="7"
             android:backgroundTint="@android:color/holo_blue_bright"
             android:elevation="10dp"
@@ -41,16 +41,15 @@
         <Button
             android:id="@+id/third_button"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="7"
             android:backgroundTint="@android:color/holo_blue_bright"
             android:text="@string/interval" />
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/dimen_52dp">
 
         <Button
             android:id="@+id/fourth_button"
@@ -81,29 +80,113 @@
         <Button
             android:id="@+id/sixth_button"
             android:layout_width="0dp"
-            android:layout_height="56dp"
+            android:layout_height="match_parent"
             android:layout_weight="7"
             android:backgroundTint="@android:color/holo_blue_bright"
             android:text="@string/buffer" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_52dp">
+
+        <Button
+            android:id="@+id/seventh_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="@string/take" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/eighth_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="@string/skip" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/ninth_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="@string/distinct" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_52dp">
+
+        <Button
+            android:id="@+id/tenth_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="@string/filter" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/eleventh_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="@string/merge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/twelfth_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:backgroundTint="@android:color/holo_blue_bright"
+            android:text="zip" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="@dimen/dimen_130dp"
-        android:layout_height="@dimen/dimen_130dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/dimen_16dp"
         android:background="@drawable/shape"
         android:contentDescription="@string/image" />
 
-    <TextView
-        android:id="@+id/text"
-        style="@style/TextAppearance.AppCompat.Title"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dimen_16dp"
-        android:hint="@string/test_text" />
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/text"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:hint="@string/test_text" />
+    </ScrollView>
 
 </LinearLayout>
