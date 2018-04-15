@@ -71,12 +71,12 @@ public class Presenter {
     }
 
     public void twelfthButtonClicked() {
-        BiFunction<Integer, String, String> stringAndIntegerFunction = new BiFunction<Integer, String, String>() {
-            @Override
-            public String apply(Integer integer, String s) throws Exception {
-                return s + " : " + integer;
-            }
-        };
+        BiFunction<Integer, String, String> stringAndIntegerFunction = (integer, s) -> s + " : " + integer;
         fragment.twelfthButtonClicked(stringAndIntegerFunction, model.getIntegerDuplicateMass(), model.getStringMass());
+    }
+
+    public void thirteenthButtonClicked() {
+        Predicate<Integer> predicate = i -> i == 4;
+        fragment.thirteenthButtonClicked(predicate, model.getIntegerDuplicateMass());
     }
 }

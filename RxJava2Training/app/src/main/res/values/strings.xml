@@ -16,4 +16,5 @@
     <string name="distinct">distinct</string>
     <string name="filter">filter</string>
     <string name="merge">merge</string>
+    <string name="takeuntil">takeUntil</string>
 </resources>
