@@ -79,4 +79,13 @@ public class Presenter {
         Predicate<Integer> predicate = i -> i == 4;
         fragment.thirteenthButtonClicked(predicate, model.getIntegerDuplicateMass());
     }
+
+    public void fourteenthButtonClicked() {
+        Predicate<Integer> predicate = integer -> integer < 20;
+        fragment.fourteenthButtonClicked(predicate, model.getIntegerDuplicateMass());
+    }
+
+    public void fifteenthButtonClicked() {
+        fragment.fifteenthButtonClicked(model.getStringMass());
+    }
 }

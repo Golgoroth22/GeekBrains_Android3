@@ -20,8 +20,12 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
 import io.reactivex.functions.BiFunction;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
@@ -42,6 +46,8 @@ public class ViewFragment extends Fragment {
     Button eleventhButton;
     Button twelfthButton;
     Button thirteenthButton;
+    Button fourteenthButton;
+    Button fifteenthButton;
     TextView textView;
     ImageView imageView;
 
@@ -90,6 +96,10 @@ public class ViewFragment extends Fragment {
         twelfthButton.setOnClickListener(v -> presenter.twelfthButtonClicked());
         thirteenthButton = view.findViewById(R.id.thirteenth_button);
         thirteenthButton.setOnClickListener(v -> presenter.thirteenthButtonClicked());
+        fourteenthButton = view.findViewById(R.id.fourteenth_button);
+        fourteenthButton.setOnClickListener(v -> presenter.fourteenthButtonClicked());
+        fifteenthButton = view.findViewById(R.id.fifteenth_button);
+        fifteenthButton.setOnClickListener(v -> presenter.fifteenthButtonClicked());
         textView = view.findViewById(R.id.text);
         imageView = view.findViewById(R.id.image);
     }
@@ -511,5 +521,40 @@ public class ViewFragment extends Fragment {
             }
         };
         observable.subscribe(observer);
+    }
+
+    public void fourteenthButtonClicked(Predicate<Integer> predicate, Integer[] integerDuplicateMass) {
+        clearTextView();
+        Single<Boolean> single = Observable
+                .fromArray(integerDuplicateMass)
+                .all(predicate);
+        SingleObserver<Boolean> observer = new SingleObserver<Boolean>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                textView.append("- onSubscribe method " + d + "\n");
+                textView.append("Integer Mass - ");
+                for (Integer i : integerDuplicateMass) {
+                    textView.append(" " + i);
+                }
+                textView.append("\nIs items in mass < 20\n");
+            }
+
+            @Override
+            public void onSuccess(Boolean aBoolean) {
+                textView.append("- onNext method result - " + aBoolean + "\n");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                textView.append("- onError method " + e + "\n");
+            }
+        };
+        single.subscribe(observer);
+    }
+
+    public void fifteenthButtonClicked(String[] stringMass) {
+        Observable<String> observable = Observable.fromArray(stringMass);
+        Consumer<String> consumer = (string) -> textView.append("- accept method " + string + "\n");
+        observable.subscribe(consumer);
     }
 }
