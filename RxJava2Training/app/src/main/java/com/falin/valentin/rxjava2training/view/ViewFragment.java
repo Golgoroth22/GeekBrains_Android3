@@ -23,7 +23,9 @@ import io.reactivex.Observer;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
 import io.reactivex.functions.BiFunction;
+import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
@@ -45,6 +47,7 @@ public class ViewFragment extends Fragment {
     Button twelfthButton;
     Button thirteenthButton;
     Button fourteenthButton;
+    Button fifteenthButton;
     TextView textView;
     ImageView imageView;
 
@@ -95,6 +98,8 @@ public class ViewFragment extends Fragment {
         thirteenthButton.setOnClickListener(v -> presenter.thirteenthButtonClicked());
         fourteenthButton = view.findViewById(R.id.fourteenth_button);
         fourteenthButton.setOnClickListener(v -> presenter.fourteenthButtonClicked());
+        fifteenthButton = view.findViewById(R.id.fifteenth_button);
+        fifteenthButton.setOnClickListener(v -> presenter.fifteenthButtonClicked());
         textView = view.findViewById(R.id.text);
         imageView = view.findViewById(R.id.image);
     }
@@ -545,5 +550,11 @@ public class ViewFragment extends Fragment {
             }
         };
         single.subscribe(observer);
+    }
+
+    public void fifteenthButtonClicked(String[] stringMass) {
+        Observable<String> observable = Observable.fromArray(stringMass);
+        Consumer<String> consumer = (string) -> textView.append("- accept method " + string + "\n");
+        observable.subscribe(consumer);
     }
 }

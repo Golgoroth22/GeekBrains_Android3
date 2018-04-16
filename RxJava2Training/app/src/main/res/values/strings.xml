@@ -18,4 +18,5 @@
     <string name="merge">merge</string>
     <string name="takeuntil">takeUntil</string>
     <string name="all">all</string>
+    <string name="action">action</string>
 </resources>
