@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import com.falin.valentin.realmexample.view.DataFragment;
 
+import io.realm.RealmConfiguration;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -16,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         DataFragment dataFragment = new DataFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.main_container, dataFragment);
+        dataFragment.attachContext(this);
+        dataFragment.initRealm();
         transaction.commit();
     }
 }
