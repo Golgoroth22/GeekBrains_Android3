@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.falin.valentin.realmexample.view.DataFragment">
+
+    <View
+        android:layout_width="@dimen/dimen_302dp"
+        android:layout_height="@dimen/dimen_402dp"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="@dimen/dimen_300dp"
+        android:layout_height="@dimen/dimen_400dp"
+        android:layout_centerInParent="true"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="@string/hello_blank_fragment" />
+
+</RelativeLayout>
