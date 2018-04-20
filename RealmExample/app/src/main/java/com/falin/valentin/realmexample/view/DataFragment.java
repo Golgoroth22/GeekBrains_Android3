@@ -20,9 +20,7 @@ import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
 public class DataFragment extends Fragment {
-    private EditText editText;
     private TextView mainText;
-    private Button saveButton;
 
     private Context context;
     private Presenter presenter;
@@ -37,8 +35,6 @@ public class DataFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_data, container, false);
         mainText = view.findViewById(R.id.data_text_view);
-        editText = view.findViewById(R.id.edit_text);
-        saveButton = view.findViewById(R.id.save_button);
         return view;
     }
 

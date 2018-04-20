@@ -4,12 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:padding="@dimen/dimen_16dp"
     tools:context="com.falin.valentin.realmexample.MainActivity">
+
+    <EditText
+        android:id="@+id/main_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/myrect"
+        android:elevation="4dp"
+        android:hint="@string/enter_text"
+        android:inputType="textAutoCorrect" />
+
+    <LinearLayout
+        android:id="@+id/arrows_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_edit_text"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/main_previous_button"
+            android:layout_width="@dimen/dimen_48dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_back_black_24dp" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/main_forward_button"
+            android:layout_width="@dimen/dimen_48dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow_forward_black_24dp" />
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/main_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/arrows_linear_layout"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/myrect"
+        android:elevation="4dp" />
+
+    <Button
+        android:id="@+id/main_update_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_container"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colorLight"
+        android:text="@string/update" />
+
+    <Button
+        android:id="@+id/main_delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_container"
+        android:layout_toEndOf="@id/main_update_button"
+        android:layout_toRightOf="@id/main_update_button"
+        android:backgroundTint="@color/colorLight"
+        android:text="@string/delete" />
+
+    <Button
+        android:id="@+id/main_show_all_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_container"
+        android:layout_toLeftOf="@id/main_update_button"
+        android:layout_toStartOf="@id/main_update_button"
+        android:backgroundTint="@color/colorLight"
+        android:text="@string/show_all" />
+
+    <ScrollView
+        android:id="@+id/main_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:layout_below="@id/main_update_button">
+
+        <TextView
+            android:id="@+id/main_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/myrect"
+            android:elevation="4dp"
+            android:hint="@string/appbar_scrolling_view_behavior"
+            android:padding="4dp" />
+    </ScrollView>
 
 </RelativeLayout>
