@@ -1,4 +1,4 @@
-#Thu Apr 19 00:45:45 NOVT 2018
+#Fri Apr 20 23:59:35 NOVT 2018
 base.0=F\:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

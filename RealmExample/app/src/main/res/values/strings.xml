@@ -10,4 +10,5 @@
     <string name="update">update</string>
     <string name="delete">delete</string>
     <string name="show_all">show all</string>
+    <string name="enter_text">  Enter text…</string>
 </resources>
