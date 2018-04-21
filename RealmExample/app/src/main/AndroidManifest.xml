@@ -16,10 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".OrmApp"
-            android:label="@string/title_activity_orm_app"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -2,15 +2,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="com.falin.valentin.realmexample.view.DataFragment">
+    android:padding="@dimen/dimen_16dp"
+    tools:context="com.falin.valentin.realmexample.view.ItemDataFragment">
+
+    <EditText
+        android:id="@+id/item_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/myrect"
+        android:elevation="4dp"
+        android:hint="@string/enter_text"
+        android:inputType="textAutoCorrect" />
 
     <TextView
-        android:id="@+id/data_text_view"
+        android:id="@+id/item_text_view"
         style="@style/TextAppearance.AppCompat.Title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/item_edit_text"
+        android:layout_centerHorizontal="true"
         android:gravity="center"
         android:padding="8dp"
         android:text="@string/hello_blank_fragment" />
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_text_view"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/item_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorLight"
+            android:text="@string/add" />
+
+        <Button
+            android:id="@+id/item_delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorLight"
+            android:text="@string/delete" />
+    </LinearLayout>
 </RelativeLayout>
