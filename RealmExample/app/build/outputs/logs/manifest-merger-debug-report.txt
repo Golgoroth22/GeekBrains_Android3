@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-25:12
+ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-21:12
 MERGED from [io.realm:realm-android-library:3.5.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\realm-android-library-3.5.0.aar\4964cd4235a271a70353190719bb2018\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:design:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\84c35f10ee8614de78e6d519fdf49523\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\06a28e2adf415046860b08dfb1987f5a\AndroidManifest.xml:17:1-31:12
@@ -20,25 +20,25 @@ MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Valentin\.grad
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2e03101d9a0547d4db0c4ba28fab7a00\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\2c5f2b49441054be74d0b981dcdbcf6c\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\13d46529149bd291d9bfa2dbc0db27dd\AndroidManifest.xml:17:1-30:12
-INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-21:12
 	package
 		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:3:5-46
 		INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
 		INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
-		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-25:12
+		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-21:12
 		INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
-		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-25:12
+		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-21:12
 		INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:5:5-23:19
+ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:5:5-19:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\84c35f10ee8614de78e6d519fdf49523\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\84c35f10ee8614de78e6d519fdf49523\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\06a28e2adf415046860b08dfb1987f5a\AndroidManifest.xml:25:5-29:19
@@ -93,14 +93,6 @@ category#android.intent.category.LAUNCHER
 ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:16:17-77
 	android:name
 		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:16:27-74
-activity#com.falin.valentin.realmexample.OrmApp
-ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:19:9-22:68
-	android:label
-		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:21:13-59
-	android:theme
-		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:22:13-56
-	android:name
-		ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:20:13-35
 uses-sdk
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml

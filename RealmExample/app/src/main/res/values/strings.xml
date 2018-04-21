@@ -7,7 +7,7 @@
     <string name="save">save</string>
     <string name="enter_book_title"> Enter Book Title</string>
     <string name="previous"><![CDATA[<- previous]]></string>
-    <string name="update">update</string>
+    <string name="add">add</string>
     <string name="delete">delete</string>
     <string name="show_all">show all</string>
     <string name="enter_text">  Enter text…</string>
