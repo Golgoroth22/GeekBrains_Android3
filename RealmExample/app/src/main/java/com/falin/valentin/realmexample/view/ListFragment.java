@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.falin.valentin.realmexample.R;
+import com.falin.valentin.realmexample.model.Model;
+import com.falin.valentin.realmexample.presenter.Presenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,13 +20,16 @@ import java.util.List;
 public class ListFragment extends Fragment {
     RecyclerView recyclerView;
     ItemListAdapter adapter;
+    private Presenter presenter;
 
     List<String> list;
 
     public ListFragment() {
-        list = new ArrayList<>();
-        list.add("1111111");
-        list.add("2222222");
+    }
+
+    public void attachPresenterAndModel(Presenter presenter, Model model) {
+        this.presenter = presenter;
+        this.list = model.getTempList();
     }
 
     @Override

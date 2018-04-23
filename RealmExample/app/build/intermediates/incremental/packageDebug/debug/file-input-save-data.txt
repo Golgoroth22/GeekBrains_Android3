@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Apr 19 00:45:45 NOVT 2018
+#Mon Apr 23 22:31:24 NOVT 2018
 2.base=F\:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\1
 5.set=DEX
 0.path=lib/armeabi-v7a/librealm-jni.so

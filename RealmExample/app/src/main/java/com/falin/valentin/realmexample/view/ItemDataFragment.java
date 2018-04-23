@@ -23,11 +23,8 @@ public class ItemDataFragment extends Fragment {
     private TextView mainText;
 
     private Context context;
-    private Presenter presenter;
 
     public ItemDataFragment() {
-        Model model = new Model();
-        presenter = new Presenter(model);
     }
 
     @Override
@@ -40,11 +37,5 @@ public class ItemDataFragment extends Fragment {
 
     public void attachContext(Context context) {
         this.context = context;
-    }
-
-    public void initRealm() {
-        Realm.init(context);
-        RealmConfiguration configuration = new RealmConfiguration.Builder().build();
-        Realm.setDefaultConfiguration(configuration);
     }
 }
