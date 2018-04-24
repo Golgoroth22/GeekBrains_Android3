@@ -2,6 +2,7 @@ package com.falin.valentin.realmexample.view;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,7 +28,7 @@ public class ListFragment extends Fragment {
     public ListFragment() {
     }
 
-    public void attachPresenterAndModel(Presenter presenter, Model model) {
+    public void attachPresenterAndModel(@NonNull Presenter presenter, @NonNull Model model) {
         this.presenter = presenter;
         this.list = model.getTempList();
     }

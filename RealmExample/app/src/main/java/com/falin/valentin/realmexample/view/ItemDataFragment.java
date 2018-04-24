@@ -20,9 +20,12 @@ import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
 public class ItemDataFragment extends Fragment {
-    private TextView mainText;
+    private EditText mainEditText;
+    private Button addButton;
+    private Button clearButton;
 
-    private Context context;
+    private MainActivity context;
+    private Presenter presenter;
 
     public ItemDataFragment() {
     }
@@ -31,11 +34,20 @@ public class ItemDataFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_data, container, false);
-        mainText = view.findViewById(R.id.item_edit_text);
+        mainEditText = view.findViewById(R.id.item_edit_text);
+        addButton = view.findViewById(R.id.item_add_button);
+        addButton.setOnClickListener(view1 -> {
+            String cityName = mainEditText.getText().toString();
+            presenter.addButtonClicked(cityName);
+            mainEditText.setText("");
+        });
+        clearButton = view.findViewById(R.id.item_clear_all_button);
+        clearButton.setOnClickListener(v -> presenter.clearButtonClicked());
         return view;
     }
 
-    public void attachContext(Context context) {
+    public void attachContextAndPresenter(MainActivity context, Presenter presenter) {
         this.context = context;
+        this.presenter = presenter;
     }
 }

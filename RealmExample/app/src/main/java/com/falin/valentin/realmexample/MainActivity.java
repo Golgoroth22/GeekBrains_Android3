@@ -1,5 +1,6 @@
 package com.falin.valentin.realmexample;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -36,12 +37,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.main_container, listFragment);
         transaction.commit();
+
         presenter.attachContext(this);
     }
 
     public void changeFragmentToItemView() {
         ItemDataFragment fragment = new ItemDataFragment();
-        fragment.attachContext(this);
+        fragment.attachContextAndPresenter(this, presenter);
         attachFragment(fragment);
     }
 
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         attachFragment(fragment);
     }
 
-    private void attachFragment(Fragment fragment) {
+    private void attachFragment(@NonNull Fragment fragment) {
         View fragmentContainer = findViewById(R.id.main_container);
         if (fragmentContainer != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
