@@ -2,6 +2,7 @@ package com.falin.valentin.realmexample.view;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +15,6 @@ import com.falin.valentin.realmexample.R;
 import com.falin.valentin.realmexample.model.Model;
 import com.falin.valentin.realmexample.presenter.Presenter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListFragment extends Fragment {
@@ -27,7 +27,7 @@ public class ListFragment extends Fragment {
     public ListFragment() {
     }
 
-    public void attachPresenterAndModel(Presenter presenter, Model model) {
+    public void attachPresenterAndModel(@NonNull Presenter presenter, @NonNull Model model) {
         this.presenter = presenter;
         this.list = model.getTempList();
     }
@@ -58,7 +58,8 @@ public class ListFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
-            holder.textView.setText("   " + list.get(position));
+            holder.cityNameTextView.setText("   " + list.get(position));
+            holder.weatherTextView.setText("-4°C");
         }
 
         @Override
@@ -71,11 +72,13 @@ public class ListFragment extends Fragment {
     }
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        TextView cityNameTextView;
+        TextView weatherTextView;
 
         MyViewHolder(View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.list_item_text);
+            cityNameTextView = itemView.findViewById(R.id.list_item_text);
+            weatherTextView = itemView.findViewById(R.id.list_item_weather);
         }
     }
 }

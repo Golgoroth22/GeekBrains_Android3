@@ -1,5 +1,6 @@
 package com.falin.valentin.realmexample.presenter;
 
+import android.support.annotation.NonNull;
 import android.widget.Toast;
 
 import com.falin.valentin.realmexample.MainActivity;
@@ -16,7 +17,7 @@ public class Presenter {
         this.model = model;
     }
 
-    public void attachContext(MainActivity context) {
+    public void attachContext(@NonNull MainActivity context) {
         this.context = context;
     }
 
@@ -32,5 +33,13 @@ public class Presenter {
 
     public List<String> getListData() {
         return model.getTempList();
+    }
+
+    public void addButtonClicked(String cityName) {
+        model.getTempList().add(cityName);
+    }
+
+    public void clearButtonClicked() {
+        model.getTempList().clear();
     }
 }

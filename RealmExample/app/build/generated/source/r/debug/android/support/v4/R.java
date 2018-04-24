@@ -83,8 +83,8 @@ public final class R {
         public static final int icon_group = 0x7f08004e;
         public static final int info = 0x7f080051;
         public static final int italic = 0x7f080052;
-        public static final int line1 = 0x7f08005a;
-        public static final int line3 = 0x7f08005b;
+        public static final int line1 = 0x7f080059;
+        public static final int line3 = 0x7f08005a;
         public static final int media_actions = 0x7f080065;
         public static final int normal = 0x7f08006d;
         public static final int notification_background = 0x7f08006e;
