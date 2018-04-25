@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import com.falin.valentin.realmexample.MainActivity;
 import com.falin.valentin.realmexample.model.Model;
+import com.falin.valentin.realmexample.model.data.WeatherDataLoader;
 
 import java.util.List;
 
@@ -36,7 +37,10 @@ public class Presenter {
     }
 
     public void addButtonClicked(String cityName) {
-        model.getTempList().add(cityName);
+//        model.getTempList().add(cityName);
+//        model.addNewCity(cityName);
+//        WeatherDataLoader.getWeatherData(context, cityName);
+        WeatherDataLoader.getJSONWeatherData(context, cityName, model);
     }
 
     public void clearButtonClicked() {

@@ -1,7 +1,5 @@
 package com.falin.valentin.realmexample.view;
 
-
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,15 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.falin.valentin.realmexample.MainActivity;
 import com.falin.valentin.realmexample.R;
-import com.falin.valentin.realmexample.model.Model;
 import com.falin.valentin.realmexample.presenter.Presenter;
-
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
 
 public class ItemDataFragment extends Fragment {
     private EditText mainEditText;
