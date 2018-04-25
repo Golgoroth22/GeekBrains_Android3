@@ -20,16 +20,16 @@ import java.util.List;
 public class ListFragment extends Fragment {
     RecyclerView recyclerView;
     ItemListAdapter adapter;
-    private Presenter presenter;
 
     List<String> list;
+    List<Double> weatherList;
 
     public ListFragment() {
     }
 
-    public void attachPresenterAndModel(@NonNull Presenter presenter, @NonNull Model model) {
-        this.presenter = presenter;
+    public void attachPresenterAndModel(@NonNull Model model) {
         this.list = model.getTempList();
+        this.weatherList = model.getTempDoubleList();
     }
 
     @Override
@@ -58,8 +58,8 @@ public class ListFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
-            holder.cityNameTextView.setText("   " + list.get(position));
-            holder.weatherTextView.setText("-4°C");
+            holder.cityNameTextView.setText("  " + list.get(position));
+            holder.weatherTextView.setText(weatherList.get(position) + " \u2103");
         }
 
         @Override

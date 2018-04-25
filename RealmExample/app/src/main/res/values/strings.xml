@@ -11,4 +11,5 @@
     <string name="clear_all">clear all</string>
     <string name="show_all">show all</string>
     <string name="enter_text">  Enter text…</string>
+    <string name="open_weather_maps_api_key">17caaf60d16c4528b56b46666e0ab108</string>
 </resources>

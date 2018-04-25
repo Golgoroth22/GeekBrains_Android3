@@ -14,11 +14,12 @@ import com.falin.valentin.realmexample.view.ItemDataFragment;
 import com.falin.valentin.realmexample.view.ListFragment;
 
 public class MainActivity extends AppCompatActivity {
-    Button previousButton;
-    Button forwardButton;
-    Model model;
+    private Button previousButton;
+    private Button forwardButton;
 
+    private Model model;
     private Presenter presenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         forwardButton.setOnClickListener(v -> presenter.buttonClicked());
 
         ListFragment listFragment = new ListFragment();
-        listFragment.attachPresenterAndModel(presenter, model);
+        listFragment.attachPresenterAndModel(model);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.main_container, listFragment);
         transaction.commit();
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeFragmentToListView() {
         ListFragment fragment = new ListFragment();
-        fragment.attachPresenterAndModel(presenter, model);
+        fragment.attachPresenterAndModel(model);
         attachFragment(fragment);
     }
 
