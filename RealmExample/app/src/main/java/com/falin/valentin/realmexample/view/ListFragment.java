@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.falin.valentin.realmexample.R;
 import com.falin.valentin.realmexample.model.Model;
+import com.falin.valentin.realmexample.model.data.FullWeatherData;
 import com.falin.valentin.realmexample.presenter.Presenter;
 
 import java.util.List;
@@ -21,15 +22,13 @@ public class ListFragment extends Fragment {
     RecyclerView recyclerView;
     ItemListAdapter adapter;
 
-    List<String> list;
-    List<Double> weatherList;
+    List<FullWeatherData> weatherData;
 
     public ListFragment() {
     }
 
     public void attachPresenterAndModel(@NonNull Model model) {
-        this.list = model.getTempList();
-        this.weatherList = model.getTempDoubleList();
+        this.weatherData = model.getWeatherDataList();
     }
 
     @Override
@@ -58,14 +57,14 @@ public class ListFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
-            holder.cityNameTextView.setText("  " + list.get(position));
-            holder.weatherTextView.setText(weatherList.get(position) + " \u2103");
+            holder.cityNameTextView.setText("  " + weatherData.get(position).getCityName());
+            holder.weatherTextView.setText(weatherData.get(position).getWeatherData().getTemperature() + " \u2103 ");
         }
 
         @Override
         public int getItemCount() {
-            if (list.size() != 0) {
-                return list.size();
+            if (weatherData.size() != 0) {
+                return weatherData.size();
             }
             return 0;
         }

@@ -1,10 +1,8 @@
 package com.falin.valentin.realmexample.model.data;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-
-public class Weather {
+public class MainWeatherData {
     @SerializedName("temp")
     private double temperature;
 
