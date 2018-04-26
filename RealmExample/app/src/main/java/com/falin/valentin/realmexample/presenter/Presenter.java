@@ -32,18 +32,12 @@ public class Presenter {
         }
     }
 
-    public List<String> getListData() {
-        return model.getTempList();
-    }
-
     public void addButtonClicked(String cityName) {
-//        model.getTempList().add(cityName);
-//        model.addNewCity(cityName);
-//        WeatherDataLoader.getWeatherData(context, cityName);
-        WeatherDataLoader.getJSONWeatherData(context, cityName, model);
+        WeatherDataLoader.getWeatherData(context, cityName, model);
+//        WeatherDataLoader.getJSONWeatherData(context, cityName, model);
     }
 
     public void clearButtonClicked() {
-        model.getTempList().clear();
+        // TODO: 26.04.2018  
     }
 }
