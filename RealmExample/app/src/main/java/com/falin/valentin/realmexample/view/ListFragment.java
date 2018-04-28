@@ -9,12 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.falin.valentin.realmexample.R;
 import com.falin.valentin.realmexample.model.Model;
 import com.falin.valentin.realmexample.model.data.FullWeatherData;
+import com.falin.valentin.realmexample.model.data.WeatherDataLoader;
 import com.falin.valentin.realmexample.presenter.Presenter;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -59,6 +62,14 @@ public class ListFragment extends Fragment {
         public void onBindViewHolder(MyViewHolder holder, int position) {
             holder.cityNameTextView.setText("  " + weatherData.get(position).getCityName());
             holder.weatherTextView.setText(weatherData.get(position).getWeatherData().getTemperature() + " \u2103 ");
+
+            StringBuilder weatherIconUrl = new StringBuilder(WeatherDataLoader.OPEN_WEATHER_ICON_URL_PREFIX)
+                    .append(weatherData.get(position).getMoreWeatherData().get(0).getIconId())
+                    .append(WeatherDataLoader.OPEN_WEATHER_ICON_URL_POSTFIX);
+            Picasso.get()
+                    .load(weatherIconUrl.toString())
+                    .resize(32, 32)
+                    .into(holder.imageView);
         }
 
         @Override
@@ -73,9 +84,11 @@ public class ListFragment extends Fragment {
     private class MyViewHolder extends RecyclerView.ViewHolder {
         TextView cityNameTextView;
         TextView weatherTextView;
+        ImageView imageView;
 
         MyViewHolder(View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.list_item_image);
             cityNameTextView = itemView.findViewById(R.id.list_item_text);
             weatherTextView = itemView.findViewById(R.id.list_item_weather);
         }

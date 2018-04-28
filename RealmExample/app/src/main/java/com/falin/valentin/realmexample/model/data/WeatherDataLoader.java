@@ -3,21 +3,9 @@ package com.falin.valentin.realmexample.model.data;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Handler;
 import android.widget.Toast;
 
-import com.falin.valentin.realmexample.R;
 import com.falin.valentin.realmexample.model.Model;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,6 +17,8 @@ public class WeatherDataLoader {
     private static final String OPEN_WEATHER_MAP_API_METRIC = "http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric";
     private static final String OPEN_WEATHER_MAP_API = "http://api.openweathermap.org/data/2.5/";
     private static final String API_KEY = "17caaf60d16c4528b56b46666e0ab108";
+    public static String OPEN_WEATHER_ICON_URL_PREFIX = "http://openweathermap.org/img/w/";
+    public static String OPEN_WEATHER_ICON_URL_POSTFIX = ".png";
     private static final String KEY = "x-api-key";
     private static final String RESPONSE = "cod";
     private static final int All_GOOD = 200;
@@ -52,7 +42,7 @@ public class WeatherDataLoader {
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
             try {
-                downloadOneUrl(call, model);
+                loadWeatherData(call, model);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -61,7 +51,7 @@ public class WeatherDataLoader {
         }
     }
 
-    private static void downloadOneUrl(Call<FullWeatherData> call, Model model) {
+    private static void loadWeatherData(Call<FullWeatherData> call, Model model) {
         call.enqueue(new Callback<FullWeatherData>() {
             @Override
             public void onResponse(Call<FullWeatherData> call, Response<FullWeatherData> response) {
