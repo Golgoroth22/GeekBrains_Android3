@@ -1,13 +1,10 @@
 package com.falin.valentin.realmexample.presenter;
 
 import android.support.annotation.NonNull;
-import android.widget.Toast;
 
 import com.falin.valentin.realmexample.MainActivity;
 import com.falin.valentin.realmexample.model.Model;
 import com.falin.valentin.realmexample.model.data.WeatherDataLoader;
-
-import java.util.List;
 
 public class Presenter {
     private boolean isList = true;

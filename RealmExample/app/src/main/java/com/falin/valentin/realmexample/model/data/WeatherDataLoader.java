@@ -3,21 +3,9 @@ package com.falin.valentin.realmexample.model.data;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Handler;
 import android.widget.Toast;
 
-import com.falin.valentin.realmexample.R;
 import com.falin.valentin.realmexample.model.Model;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,7 +40,7 @@ public class WeatherDataLoader {
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
             try {
-                downloadOneUrl(call, model);
+                loadWeatherData(call, model);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -61,7 +49,7 @@ public class WeatherDataLoader {
         }
     }
 
-    private static void downloadOneUrl(Call<FullWeatherData> call, Model model) {
+    private static void loadWeatherData(Call<FullWeatherData> call, Model model) {
         call.enqueue(new Callback<FullWeatherData>() {
             @Override
             public void onResponse(Call<FullWeatherData> call, Response<FullWeatherData> response) {
