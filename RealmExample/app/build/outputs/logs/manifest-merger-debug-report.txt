@@ -9,6 +9,7 @@ MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Valentin\.gradle\
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c0ff8e82d752d25031d99e6a18bdddd8\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:transition:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\99bfd04f141f5d40e80f20f728baac1b\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\22b8ba9afa64e3bf2f19661947f312c9\AndroidManifest.xml:17:1-31:12
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\5aab646080174145c7ecd76a3f9f8205\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\59d4c9734084e3dc315a657c3479e262\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\d203e9dc3379fb03162cf41a75e737b0\AndroidManifest.xml:17:1-31:12
@@ -17,6 +18,7 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Valentin\.g
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\f74668bf9862f7155f2862a4dee16eb5\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\c748b27c933b1d3dbd3fa8693cc9ab59\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\68e92ef8a688a82f44b0ef96eca7099f\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\8e0ddf84ba2958a33b003919731ee90f\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\b2aeb1630b972b34d1a325bba9dddabf\AndroidManifest.xml:17:1-30:12
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-24:12
@@ -55,6 +57,8 @@ MERGED from [com.android.support:transition:26.1.0] C:\Users\Valentin\.gradle\ca
 MERGED from [com.android.support:transition:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\99bfd04f141f5d40e80f20f728baac1b\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\22b8ba9afa64e3bf2f19661947f312c9\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\22b8ba9afa64e3bf2f19661947f312c9\AndroidManifest.xml:25:5-29:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:7:5-12:19
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\5aab646080174145c7ecd76a3f9f8205\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\5aab646080174145c7ecd76a3f9f8205\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\59d4c9734084e3dc315a657c3479e262\AndroidManifest.xml:22:5-26:19
@@ -113,6 +117,8 @@ MERGED from [com.android.support:transition:26.1.0] C:\Users\Valentin\.gradle\ca
 MERGED from [com.android.support:transition:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\99bfd04f141f5d40e80f20f728baac1b\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\22b8ba9afa64e3bf2f19661947f312c9\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\22b8ba9afa64e3bf2f19661947f312c9\AndroidManifest.xml:21:5-23:54
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:5:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\5aab646080174145c7ecd76a3f9f8205\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\5aab646080174145c7ecd76a3f9f8205\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\59d4c9734084e3dc315a657c3479e262\AndroidManifest.xml:20:5-44
@@ -129,6 +135,8 @@ MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Valentin\.grad
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\c748b27c933b1d3dbd3fa8693cc9ab59\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\68e92ef8a688a82f44b0ef96eca7099f\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\68e92ef8a688a82f44b0ef96eca7099f\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\8e0ddf84ba2958a33b003919731ee90f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\8e0ddf84ba2958a33b003919731ee90f\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\b2aeb1630b972b34d1a325bba9dddabf\AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\b2aeb1630b972b34d1a325bba9dddabf\AndroidManifest.xml:20:5-22:41
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
@@ -171,6 +179,14 @@ MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Valentin\.gradl
 		ADDED from [com.android.support:design:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\7515c6d3adfceef1a21f7415031419f2\AndroidManifest.xml:28:13-35
 	android:name
 		ADDED from [com.android.support:design:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\7515c6d3adfceef1a21f7415031419f2\AndroidManifest.xml:27:13-51
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:9:13-64
 meta-data#android.arch.lifecycle.VERSION
 ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\b2aeb1630b972b34d1a325bba9dddabf\AndroidManifest.xml:25:9-27:47
 	android:value

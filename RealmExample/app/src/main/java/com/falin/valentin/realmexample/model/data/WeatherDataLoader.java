@@ -17,6 +17,8 @@ public class WeatherDataLoader {
     private static final String OPEN_WEATHER_MAP_API_METRIC = "http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric";
     private static final String OPEN_WEATHER_MAP_API = "http://api.openweathermap.org/data/2.5/";
     private static final String API_KEY = "17caaf60d16c4528b56b46666e0ab108";
+    public static String OPEN_WEATHER_ICON_URL_PREFIX = "http://openweathermap.org/img/w/";
+    public static String OPEN_WEATHER_ICON_URL_POSTFIX = ".png";
     private static final String KEY = "x-api-key";
     private static final String RESPONSE = "cod";
     private static final int All_GOOD = 200;
