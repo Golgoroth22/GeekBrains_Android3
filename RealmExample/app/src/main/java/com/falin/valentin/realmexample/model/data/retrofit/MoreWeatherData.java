@@ -1,4 +1,4 @@
-package com.falin.valentin.realmexample.model.data;
+package com.falin.valentin.realmexample.model.data.retrofit;
 
 import com.google.gson.annotations.SerializedName;
 
