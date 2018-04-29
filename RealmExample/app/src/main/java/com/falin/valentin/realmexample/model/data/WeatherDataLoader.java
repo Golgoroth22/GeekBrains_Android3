@@ -6,6 +6,8 @@ import android.net.NetworkInfo;
 import android.widget.Toast;
 
 import com.falin.valentin.realmexample.model.Model;
+import com.falin.valentin.realmexample.model.data.retrofit.FullWeatherData;
+import com.falin.valentin.realmexample.model.data.retrofit.RetrofitRestAPI;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,7 +25,7 @@ public class WeatherDataLoader {
     private static final String RESPONSE = "cod";
     private static final int All_GOOD = 200;
 
-    private static RestAPI restAPI;
+    private static RetrofitRestAPI restAPI;
 
     public static void getWeatherData(Context context, String city, Model model) {
         Retrofit retrofit = null;
@@ -32,7 +34,7 @@ public class WeatherDataLoader {
                     .baseUrl(OPEN_WEATHER_MAP_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            restAPI = retrofit.create(RestAPI.class);
+            restAPI = retrofit.create(RetrofitRestAPI.class);
         } catch (Exception e) {
             System.out.println("No retrofit " + e.getLocalizedMessage());
             return;
@@ -56,7 +58,8 @@ public class WeatherDataLoader {
             @Override
             public void onResponse(Call<FullWeatherData> call, Response<FullWeatherData> response) {
                 if (response.isSuccessful()) {
-                    model.addNewCity(response.body());
+                    //model.addNewCity(response.body());
+                    model.addNewCityToRoom(response.body());
                 }
             }
 

@@ -14,9 +14,9 @@ import android.widget.TextView;
 
 import com.falin.valentin.realmexample.R;
 import com.falin.valentin.realmexample.model.Model;
-import com.falin.valentin.realmexample.model.data.FullWeatherData;
+import com.falin.valentin.realmexample.model.data.retrofit.FullWeatherData;
 import com.falin.valentin.realmexample.model.data.WeatherDataLoader;
-import com.falin.valentin.realmexample.presenter.Presenter;
+import com.falin.valentin.realmexample.model.data.room.RoomWeatherEntity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -25,13 +25,15 @@ public class ListFragment extends Fragment {
     RecyclerView recyclerView;
     ItemListAdapter adapter;
 
-    List<FullWeatherData> weatherData;
+    //List<FullWeatherData> weatherData;
+    public static List<RoomWeatherEntity> weatherEntityList;
 
     public ListFragment() {
     }
 
     public void attachPresenterAndModel(@NonNull Model model) {
-        this.weatherData = model.getWeatherDataList();
+        //this.weatherData = model.getWeatherDataList();
+        weatherEntityList = model.getRoomWeatherEntityList();
     }
 
     @Override
@@ -60,11 +62,11 @@ public class ListFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
-            holder.cityNameTextView.setText("  " + weatherData.get(position).getCityName());
-            holder.weatherTextView.setText(weatherData.get(position).getWeatherData().getTemperature() + " \u2103 ");
+            holder.cityNameTextView.setText("  " + weatherEntityList.get(position).getCityName());
+            holder.weatherTextView.setText(weatherEntityList.get(position).getTemperature() + " \u2103 ");
 
             StringBuilder weatherIconUrl = new StringBuilder(WeatherDataLoader.OPEN_WEATHER_ICON_URL_PREFIX)
-                    .append(weatherData.get(position).getMoreWeatherData().get(0).getIconId())
+                    .append(weatherEntityList.get(position).getIconId())
                     .append(WeatherDataLoader.OPEN_WEATHER_ICON_URL_POSTFIX);
             Picasso.get()
                     .load(weatherIconUrl.toString())
@@ -74,8 +76,8 @@ public class ListFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            if (weatherData.size() != 0) {
-                return weatherData.size();
+            if (weatherEntityList.size() != 0) {
+                return weatherEntityList.size();
             }
             return 0;
         }
