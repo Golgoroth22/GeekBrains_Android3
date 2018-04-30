@@ -5,7 +5,7 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class RoomWeatherEntity {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String cityName;
     private int cityId;
@@ -17,6 +17,13 @@ public class RoomWeatherEntity {
 
     public RoomWeatherEntity(int id, String cityName, int cityId, String iconId, double temperature) {
         this.id = id;
+        this.cityName = cityName;
+        this.cityId = cityId;
+        this.iconId = iconId;
+        this.temperature = temperature;
+    }
+
+    public RoomWeatherEntity(String cityName, int cityId, String iconId, double temperature) {
         this.cityName = cityName;
         this.cityId = cityId;
         this.iconId = iconId;

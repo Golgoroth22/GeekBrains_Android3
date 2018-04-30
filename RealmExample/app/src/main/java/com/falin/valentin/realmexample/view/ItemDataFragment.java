@@ -17,7 +17,6 @@ public class ItemDataFragment extends Fragment {
     private Button addButton;
     private Button clearButton;
 
-    private MainActivity context;
     private Presenter presenter;
 
     public ItemDataFragment() {
@@ -39,8 +38,7 @@ public class ItemDataFragment extends Fragment {
         return view;
     }
 
-    public void attachContextAndPresenter(MainActivity context, Presenter presenter) {
-        this.context = context;
+    public void attachContextAndPresenter(Presenter presenter) {
         this.presenter = presenter;
     }
 }

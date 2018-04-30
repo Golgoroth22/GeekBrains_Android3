@@ -1,41 +1,51 @@
 package com.falin.valentin.realmexample.model;
 
+import android.arch.persistence.room.Room;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 import com.falin.valentin.realmexample.MainActivity;
 import com.falin.valentin.realmexample.model.data.retrofit.FullWeatherData;
+import com.falin.valentin.realmexample.model.data.room.AppRoomDatabase;
 import com.falin.valentin.realmexample.model.data.room.RoomWeatherEntity;
 import com.falin.valentin.realmexample.view.ListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+
 public class Model {
-    private List<FullWeatherData> weatherDataList;
+    private static String DATABASE_NAME = "database10";
+    private AppRoomDatabase roomDatabase;
     private List<RoomWeatherEntity> roomWeatherEntityList;
 
     public Model() {
-        this.weatherDataList = new ArrayList<>();
         this.roomWeatherEntityList = new ArrayList<>();
-        new GetAllCities().execute();
-    }
-
-    public List<FullWeatherData> getWeatherDataList() {
-        return weatherDataList;
+//        new GetAllCities().execute();
+//        MainActivity.getDatabase().getRoomWeatherEntityDao().getAllJavaRXRoomWeatherEntitys()
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(roomWeatherEntity -> ListFragment.weatherEntityList.add(roomWeatherEntity));
     }
 
     public List<RoomWeatherEntity> getRoomWeatherEntityList() {
         return roomWeatherEntityList;
     }
 
-    public void addNewCity(@NonNull FullWeatherData newCityData) {
-        this.weatherDataList.add(newCityData);
+    public void initRoomDatabase(Context context) {
+        this.roomDatabase = Room
+                .databaseBuilder(context, AppRoomDatabase.class, DATABASE_NAME)
+                .fallbackToDestructiveMigration()
+                .build();
     }
 
-    public void addNewCityToRoom(@NonNull FullWeatherData newCityData) {
+    public void loadDataFromDatabase() {
+        new GetAllCities().execute();
+    }
+
+    public void addNewEntityToDatabase(@NonNull FullWeatherData newCityData) {
         RoomWeatherEntity entity = new RoomWeatherEntity(
-                roomWeatherEntityList.size() + 2,
                 newCityData.getCityName(),
                 newCityData.getCityId(),
                 newCityData.getMoreWeatherData().get(0).getIconId(),
@@ -47,7 +57,7 @@ public class Model {
     private class AddNewCityTasc extends AsyncTask<RoomWeatherEntity, Void, Void> {
         @Override
         protected Void doInBackground(RoomWeatherEntity... roomWeatherEntities) {
-            MainActivity.getDatabase().getRoomWeatherEntityDao().insertAll(roomWeatherEntities[0]);
+            roomDatabase.getRoomWeatherEntityDao().insertAll(roomWeatherEntities[0]);
             return null;
         }
     }
@@ -55,8 +65,8 @@ public class Model {
     private class GetAllCities extends AsyncTask<Void, Void, List<RoomWeatherEntity>> {
         @Override
         protected List<RoomWeatherEntity> doInBackground(Void... voids) {
-            List<RoomWeatherEntity> entitys = MainActivity.getDatabase().getRoomWeatherEntityDao().getAllRoomWeatherEntitys();
-            ListFragment.weatherEntityList.addAll(entitys);
+            List<RoomWeatherEntity> entitys = roomDatabase.getRoomWeatherEntityDao().getAllRoomWeatherEntitys();
+            roomWeatherEntityList.addAll(entitys);
             return entitys;
         }
     }

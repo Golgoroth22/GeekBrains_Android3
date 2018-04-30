@@ -72,6 +72,10 @@
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\586068473096323a0b4a18918fa8b5d1\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_close_black_24dp.png.flat",
+        "source": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_close_black_24dp.png"
+    },
+    {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_singlechoice_material.xml.flat",
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\586068473096323a0b4a18918fa8b5d1\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
@@ -320,6 +324,10 @@
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\586068473096323a0b4a18918fa8b5d1\\res\\drawable-xxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_close_black_24dp.png.flat",
+        "source": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_close_black_24dp.png"
+    },
+    {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_dark.xml.flat",
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\586068473096323a0b4a18918fa8b5d1\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
@@ -562,6 +570,10 @@
     {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\586068473096323a0b4a18918fa8b5d1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_close_black_24dp.png.flat",
+        "source": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_close_black_24dp.png"
     },
     {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_cloud_black_24dp.png.flat",
@@ -1592,6 +1604,10 @@
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\68e92ef8a688a82f44b0ef96eca7099f\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
+        "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_close_black_24dp.png.flat",
+        "source": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_close_black_24dp.png"
+    },
+    {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
@@ -1608,6 +1624,10 @@
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\586068473096323a0b4a18918fa8b5d1\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
+        "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_close_black_24dp.png.flat",
+        "source": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_close_black_24dp.png"
+    },
+    {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_light.xml.flat",
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\586068473096323a0b4a18918fa8b5d1\\res\\color\\abc_primary_text_material_light.xml"
     },
@@ -1618,6 +1638,10 @@
     {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\586068473096323a0b4a18918fa8b5d1\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_close_black_24dp.png.flat",
+        "source": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_close_black_24dp.png"
     },
     {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
@@ -1638,6 +1662,10 @@
     {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\Valentin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\586068473096323a0b4a18918fa8b5d1\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_close_black_24dp.xml.flat",
+        "source": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_close_black_24dp.xml"
     },
     {
         "merged": "F:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_item_layout.xml.flat",

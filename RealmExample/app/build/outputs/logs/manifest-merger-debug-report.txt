@@ -4,12 +4,15 @@ ADDED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\Andr
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-24:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\39ce664c21da54038131367630ba68af\AndroidManifest.xml:15:1-21:12
+MERGED from [android.arch.persistence.room:rxjava2:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\rxjava2-1.0.0.aar\eb433553ea9ef786fd0046a21075ba96\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\7515c6d3adfceef1a21f7415031419f2\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\586068473096323a0b4a18918fa8b5d1\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c0ff8e82d752d25031d99e6a18bdddd8\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:transition:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\99bfd04f141f5d40e80f20f728baac1b\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\22b8ba9afa64e3bf2f19661947f312c9\AndroidManifest.xml:17:1-31:12
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:2:1-14:12
+MERGED from [android.arch.persistence.room:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\29db788b6cbc36b62c53f57ed4780663\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\5aab646080174145c7ecd76a3f9f8205\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\59d4c9734084e3dc315a657c3479e262\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\d203e9dc3379fb03162cf41a75e737b0\AndroidManifest.xml:17:1-31:12
@@ -19,6 +22,9 @@ MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Valentin\.grad
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\c748b27c933b1d3dbd3fa8693cc9ab59\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\68e92ef8a688a82f44b0ef96eca7099f\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\8e0ddf84ba2958a33b003919731ee90f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.persistence:db-framework:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\db-framework-1.0.0.aar\e028d87bdfaf30dcc4c6dbf280b7d258\AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.persistence:db:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\db-1.0.0.aar\2168895e2782358b66be1022387343fd\AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.core:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\9bd7c84c8866728dec8dc61f6b717df6\AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\b2aeb1630b972b34d1a325bba9dddabf\AndroidManifest.xml:17:1-30:12
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml:2:1-24:12
@@ -107,6 +113,10 @@ uses-sdk
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\39ce664c21da54038131367630ba68af\AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\rxandroid-2.0.1.aar\39ce664c21da54038131367630ba68af\AndroidManifest.xml:19:5-43
+MERGED from [android.arch.persistence.room:rxjava2:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\rxjava2-1.0.0.aar\eb433553ea9ef786fd0046a21075ba96\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence.room:rxjava2:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\rxjava2-1.0.0.aar\eb433553ea9ef786fd0046a21075ba96\AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.support:design:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\7515c6d3adfceef1a21f7415031419f2\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\7515c6d3adfceef1a21f7415031419f2\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\586068473096323a0b4a18918fa8b5d1\AndroidManifest.xml:21:5-23:78
@@ -119,6 +129,8 @@ MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Valentin\.gradle\ca
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\22b8ba9afa64e3bf2f19661947f312c9\AndroidManifest.xml:21:5-23:54
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:5:5-44
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\260e9191ff4a6aaa72851c09a22c5ef2\AndroidManifest.xml:5:5-44
+MERGED from [android.arch.persistence.room:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\29db788b6cbc36b62c53f57ed4780663\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence.room:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\29db788b6cbc36b62c53f57ed4780663\AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\5aab646080174145c7ecd76a3f9f8205\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\5aab646080174145c7ecd76a3f9f8205\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\59d4c9734084e3dc315a657c3479e262\AndroidManifest.xml:20:5-44
@@ -137,6 +149,12 @@ MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Valentin\.gradl
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\68e92ef8a688a82f44b0ef96eca7099f\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\8e0ddf84ba2958a33b003919731ee90f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\8e0ddf84ba2958a33b003919731ee90f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.persistence:db-framework:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\db-framework-1.0.0.aar\e028d87bdfaf30dcc4c6dbf280b7d258\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db-framework:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\db-framework-1.0.0.aar\e028d87bdfaf30dcc4c6dbf280b7d258\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\db-1.0.0.aar\2168895e2782358b66be1022387343fd\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\db-1.0.0.aar\2168895e2782358b66be1022387343fd\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.core:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\9bd7c84c8866728dec8dc61f6b717df6\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.core:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\9bd7c84c8866728dec8dc61f6b717df6\AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\b2aeb1630b972b34d1a325bba9dddabf\AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Valentin\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\b2aeb1630b972b34d1a325bba9dddabf\AndroidManifest.xml:20:5-22:41
 INJECTED from F:\AndroidProjects\GeekBrains_Android3\RealmExample\app\src\main\AndroidManifest.xml
