@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Apr 30 16:42:52 NOVT 2018
+#Mon Apr 30 21:36:57 NOVT 2018
 0.baseType=DIRECTORY
 0.base=F\:\\AndroidProjects\\GeekBrains_Android3\\RealmExample\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 0.path=classes.dex

@@ -1,6 +1,5 @@
 package com.falin.valentin.realmexample;
 
-import android.arch.persistence.room.Room;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.falin.valentin.realmexample.model.Model;
-import com.falin.valentin.realmexample.model.data.room.AppRoomDatabase;
 import com.falin.valentin.realmexample.presenter.Presenter;
 import com.falin.valentin.realmexample.view.ItemDataFragment;
 import com.falin.valentin.realmexample.view.ListFragment;
@@ -19,17 +17,15 @@ public class MainActivity extends AppCompatActivity {
     private Button previousButton;
     private Button forwardButton;
 
-    private Model model;
+    private static Model model;
     private Presenter presenter;
 
-    public static AppRoomDatabase database;
+    //public static AppRoomDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        database = Room
-                .databaseBuilder(getApplicationContext(), AppRoomDatabase.class, "database")
-                .build();
+
         setContentView(R.layout.activity_main);
 
         model = new Model();
@@ -40,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         forwardButton.setOnClickListener(v -> presenter.buttonClicked());
 
         ListFragment listFragment = new ListFragment();
-        listFragment.attachPresenterAndModel(model);
+        listFragment.attachModel(model);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.main_container, listFragment);
         transaction.commit();
@@ -56,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeFragmentToListView() {
         ListFragment fragment = new ListFragment();
-        fragment.attachPresenterAndModel(model);
+        fragment.attachModel(model);
         attachFragment(fragment);
     }
 
@@ -68,9 +64,5 @@ public class MainActivity extends AppCompatActivity {
             transaction.replace(R.id.main_container, fragment);
             transaction.commit();
         }
-    }
-
-    public static AppRoomDatabase getDatabase() {
-        return database;
     }
 }

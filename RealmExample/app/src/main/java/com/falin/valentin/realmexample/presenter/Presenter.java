@@ -17,6 +17,12 @@ public class Presenter {
 
     public void attachContext(@NonNull MainActivity context) {
         this.context = context;
+        initDatabaseAndLoadData();
+    }
+
+    private void initDatabaseAndLoadData() {
+        model.initRoomDatabase(context);
+        model.loadDataFromDatabase();
     }
 
     public void buttonClicked() {
