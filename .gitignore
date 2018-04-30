@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.class
+RealmExample/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt
+*.json
+*.dex
