@@ -49,3 +49,8 @@ Temporary Items
 RealmExample/app/build/intermediates/incremental/packageDebug/debug/dex-renamer-state.txt
 *.json
 *.dex
+*.bin
+*.lock
+RealmExample/.idea/workspace.xml
+RealmExample/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties
+RealmExample/app/build/intermediates/res/debug/resources-debug.ap_
