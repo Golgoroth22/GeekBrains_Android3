@@ -58,7 +58,6 @@ public class WeatherDataLoader {
             @Override
             public void onResponse(Call<FullWeatherData> call, Response<FullWeatherData> response) {
                 if (response.isSuccessful()) {
-                    //model.addNewCity(response.body());
                     model.addNewCityToRoom(response.body());
                 }
             }

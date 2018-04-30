@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeFragmentToItemView() {
         ItemDataFragment fragment = new ItemDataFragment();
-        fragment.attachContextAndPresenter(this, presenter);
+        fragment.attachContextAndPresenter(presenter);
         attachFragment(fragment);
     }
 

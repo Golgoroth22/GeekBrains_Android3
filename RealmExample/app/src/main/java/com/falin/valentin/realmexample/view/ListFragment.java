@@ -25,14 +25,12 @@ public class ListFragment extends Fragment {
     RecyclerView recyclerView;
     ItemListAdapter adapter;
 
-    //List<FullWeatherData> weatherData;
     public static List<RoomWeatherEntity> weatherEntityList;
 
     public ListFragment() {
     }
 
     public void attachPresenterAndModel(@NonNull Model model) {
-        //this.weatherData = model.getWeatherDataList();
         weatherEntityList = model.getRoomWeatherEntityList();
     }
 

@@ -11,6 +11,9 @@ import com.falin.valentin.realmexample.view.ListFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+
 public class Model {
     private List<FullWeatherData> weatherDataList;
     private List<RoomWeatherEntity> roomWeatherEntityList;
@@ -19,6 +22,9 @@ public class Model {
         this.weatherDataList = new ArrayList<>();
         this.roomWeatherEntityList = new ArrayList<>();
         new GetAllCities().execute();
+        MainActivity.getDatabase().getRoomWeatherEntityDao().getAllJavaRXRoomWeatherEntitys()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(roomWeatherEntity -> ListFragment.weatherEntityList.add(roomWeatherEntity));
     }
 
     public List<FullWeatherData> getWeatherDataList() {

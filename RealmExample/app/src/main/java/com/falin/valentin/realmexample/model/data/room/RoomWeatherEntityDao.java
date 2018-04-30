@@ -6,6 +6,8 @@ import android.arch.persistence.room.Query;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
+
 @Dao
 public interface RoomWeatherEntityDao {
     @Insert
@@ -13,4 +15,7 @@ public interface RoomWeatherEntityDao {
 
     @Query("SELECT * FROM roomweatherentity")
     List<RoomWeatherEntity> getAllRoomWeatherEntitys();
+
+    @Query("SELECT * FROM roomweatherentity")
+    Flowable<RoomWeatherEntity> getAllJavaRXRoomWeatherEntitys();
 }
