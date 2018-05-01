@@ -17,6 +17,7 @@ import com.falin.valentin.realmexample.model.Model;
 import com.falin.valentin.realmexample.model.data.retrofit.FullWeatherData;
 import com.falin.valentin.realmexample.model.data.WeatherDataLoader;
 import com.falin.valentin.realmexample.model.data.room.RoomWeatherEntity;
+import com.falin.valentin.realmexample.presenter.Presenter;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -25,13 +26,15 @@ public class ListFragment extends Fragment {
     RecyclerView recyclerView;
     ItemListAdapter adapter;
 
+    private Presenter presenter;
     private List<RoomWeatherEntity> weatherEntityList;
 
     public ListFragment() {
     }
 
-    public void attachModel(@NonNull Model model) {
+    public void attachModel(@NonNull Model model, @NonNull Presenter presenter) {
         this.weatherEntityList = model.getRoomWeatherEntityList();
+        this.presenter = presenter;
     }
 
     @Override
@@ -75,8 +78,9 @@ public class ListFragment extends Fragment {
         }
 
         private void deleteItem(int position) {
-            //weatherEntityList.remove(position - 1);
-
+            RoomWeatherEntity entity = weatherEntityList.get(position);
+            presenter.deleteElement(entity);
+            weatherEntityList.remove(entity);
             notifyItemRemoved(position);
         }
 

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         forwardButton.setOnClickListener(v -> presenter.buttonClicked());
 
         ListFragment listFragment = new ListFragment();
-        listFragment.attachModel(model);
+        listFragment.attachModel(model, presenter);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.main_container, listFragment);
         transaction.commit();
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeFragmentToListView() {
         ListFragment fragment = new ListFragment();
-        fragment.attachModel(model);
+        fragment.attachModel(model, presenter);
         attachFragment(fragment);
     }
 
