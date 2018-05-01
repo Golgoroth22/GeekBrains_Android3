@@ -70,6 +70,14 @@ public class ListFragment extends Fragment {
                     .load(weatherIconUrl.toString())
                     .resize(32, 32)
                     .into(holder.imageView);
+
+            holder.deleteItemImageView.setOnClickListener(view -> deleteItem(position));
+        }
+
+        private void deleteItem(int position) {
+            //weatherEntityList.remove(position - 1);
+
+            notifyItemRemoved(position);
         }
 
         @Override
@@ -85,9 +93,11 @@ public class ListFragment extends Fragment {
         TextView cityNameTextView;
         TextView weatherTextView;
         ImageView imageView;
+        ImageView deleteItemImageView;
 
         MyViewHolder(View itemView) {
             super(itemView);
+            deleteItemImageView = itemView.findViewById(R.id.list_item_delete_item);
             imageView = itemView.findViewById(R.id.list_item_image);
             cityNameTextView = itemView.findViewById(R.id.list_item_text);
             weatherTextView = itemView.findViewById(R.id.list_item_weather);

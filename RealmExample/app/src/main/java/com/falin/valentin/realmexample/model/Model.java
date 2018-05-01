@@ -70,4 +70,12 @@ public class Model {
             return entitys;
         }
     }
+
+    private class DeleteCity extends AsyncTask<RoomWeatherEntity, Void, Void> {
+        @Override
+        protected Void doInBackground(RoomWeatherEntity... roomWeatherEntities) {
+            roomDatabase.getRoomWeatherEntityDao().delete(roomWeatherEntities[0]);
+            return null;
+        }
+    }
 }
