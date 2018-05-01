@@ -5,6 +5,9 @@ import android.support.annotation.NonNull;
 import com.falin.valentin.realmexample.MainActivity;
 import com.falin.valentin.realmexample.model.Model;
 import com.falin.valentin.realmexample.model.data.WeatherDataLoader;
+import com.falin.valentin.realmexample.model.data.room.RoomWeatherEntity;
+
+import java.util.List;
 
 public class Presenter {
     private boolean isList = true;
@@ -42,5 +45,9 @@ public class Presenter {
 
     public void clearButtonClicked() {
         // TODO: 26.04.2018  
+    }
+
+    public void deleteElement(RoomWeatherEntity roomWeatherEntity) {
+        model.deleteElementFromDatabase(roomWeatherEntity);
     }
 }

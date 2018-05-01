@@ -54,6 +54,10 @@ public class Model {
         new AddNewCityTasc().execute(entity);
     }
 
+    public void deleteElementFromDatabase(RoomWeatherEntity roomWeatherEntity) {
+        new DeleteCity().execute(roomWeatherEntity);
+    }
+
     private class AddNewCityTasc extends AsyncTask<RoomWeatherEntity, Void, Void> {
         @Override
         protected Void doInBackground(RoomWeatherEntity... roomWeatherEntities) {
@@ -68,6 +72,20 @@ public class Model {
             List<RoomWeatherEntity> entitys = roomDatabase.getRoomWeatherEntityDao().getAllRoomWeatherEntitys();
             roomWeatherEntityList.addAll(entitys);
             return entitys;
+        }
+    }
+
+    private class DeleteCity extends AsyncTask<RoomWeatherEntity, Void, RoomWeatherEntity> {
+        @Override
+        protected RoomWeatherEntity doInBackground(RoomWeatherEntity... roomWeatherEntities) {
+            roomDatabase.getRoomWeatherEntityDao().delete(roomWeatherEntities[0]);
+            return roomWeatherEntities[0];
+        }
+
+        @Override
+        protected void onPostExecute(RoomWeatherEntity roomWeatherEntity) {
+            super.onPostExecute(roomWeatherEntity);
+            roomWeatherEntityList.remove(roomWeatherEntity);
         }
     }
 }

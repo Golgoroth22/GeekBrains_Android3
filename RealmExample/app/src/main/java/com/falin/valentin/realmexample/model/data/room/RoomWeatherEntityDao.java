@@ -1,6 +1,7 @@
 package com.falin.valentin.realmexample.model.data.room;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
@@ -18,4 +19,7 @@ public interface RoomWeatherEntityDao {
 
     @Query("SELECT * FROM roomweatherentity")
     Flowable<RoomWeatherEntity> getAllJavaRXRoomWeatherEntitys();
+
+    @Delete
+    void delete(RoomWeatherEntity roomWeatherEntity);
 }

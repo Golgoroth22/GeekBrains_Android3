@@ -17,6 +17,7 @@ import com.falin.valentin.realmexample.model.Model;
 import com.falin.valentin.realmexample.model.data.retrofit.FullWeatherData;
 import com.falin.valentin.realmexample.model.data.WeatherDataLoader;
 import com.falin.valentin.realmexample.model.data.room.RoomWeatherEntity;
+import com.falin.valentin.realmexample.presenter.Presenter;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -25,13 +26,15 @@ public class ListFragment extends Fragment {
     RecyclerView recyclerView;
     ItemListAdapter adapter;
 
+    private Presenter presenter;
     private List<RoomWeatherEntity> weatherEntityList;
 
     public ListFragment() {
     }
 
-    public void attachModel(@NonNull Model model) {
+    public void attachModel(@NonNull Model model, @NonNull Presenter presenter) {
         this.weatherEntityList = model.getRoomWeatherEntityList();
+        this.presenter = presenter;
     }
 
     @Override
@@ -70,6 +73,15 @@ public class ListFragment extends Fragment {
                     .load(weatherIconUrl.toString())
                     .resize(32, 32)
                     .into(holder.imageView);
+
+            holder.deleteItemImageView.setOnClickListener(view -> deleteItem(position));
+        }
+
+        private void deleteItem(int position) {
+            RoomWeatherEntity entity = weatherEntityList.get(position);
+            presenter.deleteElement(entity);
+            weatherEntityList.remove(entity);
+            notifyItemRemoved(position);
         }
 
         @Override
@@ -85,9 +97,11 @@ public class ListFragment extends Fragment {
         TextView cityNameTextView;
         TextView weatherTextView;
         ImageView imageView;
+        ImageView deleteItemImageView;
 
         MyViewHolder(View itemView) {
             super(itemView);
+            deleteItemImageView = itemView.findViewById(R.id.list_item_delete_item);
             imageView = itemView.findViewById(R.id.list_item_image);
             cityNameTextView = itemView.findViewById(R.id.list_item_text);
             weatherTextView = itemView.findViewById(R.id.list_item_weather);
