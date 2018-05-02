@@ -8,6 +8,8 @@ import android.arch.persistence.room.Query;
 import java.util.List;
 
 import io.reactivex.Flowable;
+import io.reactivex.Maybe;
+import io.reactivex.Observable;
 
 @Dao
 public interface RoomWeatherEntityDao {
@@ -18,7 +20,7 @@ public interface RoomWeatherEntityDao {
     List<RoomWeatherEntity> getAllRoomWeatherEntitys();
 
     @Query("SELECT * FROM roomweatherentity")
-    Flowable<RoomWeatherEntity> getAllJavaRXRoomWeatherEntitys();
+    Maybe<List<RoomWeatherEntity>> getAllJavaRXRoomWeatherEntitys();
 
     @Delete
     void delete(RoomWeatherEntity roomWeatherEntity);

@@ -14,7 +14,14 @@ import com.falin.valentin.realmexample.view.ListFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.observers.DisposableMaybeObserver;
+import io.reactivex.schedulers.Schedulers;
 
 public class Model {
     private static String DATABASE_NAME = "database10";
@@ -41,7 +48,26 @@ public class Model {
     }
 
     public void loadDataFromDatabase() {
-        new GetAllCities().execute();
+        //new GetAllCities().execute();
+        roomDatabase.getRoomWeatherEntityDao().getAllJavaRXRoomWeatherEntitys()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableMaybeObserver<List<RoomWeatherEntity>>() {
+                    @Override
+                    public void onSuccess(List<RoomWeatherEntity> roomWeatherEntities) {
+                        roomWeatherEntityList.addAll(roomWeatherEntities);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        System.out.println("onError");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        System.out.println("onComplete");
+                    }
+                });
     }
 
     public void addNewEntityToDatabase(@NonNull FullWeatherData newCityData) {

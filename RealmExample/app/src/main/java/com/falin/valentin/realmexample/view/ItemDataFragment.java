@@ -15,7 +15,6 @@ import com.falin.valentin.realmexample.presenter.Presenter;
 public class ItemDataFragment extends Fragment {
     private EditText mainEditText;
     private Button addButton;
-    private Button clearButton;
 
     private Presenter presenter;
 
@@ -33,8 +32,6 @@ public class ItemDataFragment extends Fragment {
             presenter.addButtonClicked(cityName);
             mainEditText.setText("");
         });
-        clearButton = view.findViewById(R.id.item_clear_all_button);
-        clearButton.setOnClickListener(v -> presenter.clearButtonClicked());
         return view;
     }
 
