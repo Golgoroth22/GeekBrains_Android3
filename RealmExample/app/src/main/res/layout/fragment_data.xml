@@ -27,12 +27,5 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorLight"
             android:text="@string/add" />
-
-        <Button
-            android:id="@+id/item_clear_all_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorLight"
-            android:text="@string/clear_all" />
     </LinearLayout>
 </RelativeLayout>

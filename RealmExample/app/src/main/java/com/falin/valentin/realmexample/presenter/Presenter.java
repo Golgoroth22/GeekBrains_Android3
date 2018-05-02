@@ -43,10 +43,6 @@ public class Presenter {
 //        WeatherDataLoader.getJSONWeatherData(context, cityName, model);
     }
 
-    public void clearButtonClicked() {
-        // TODO: 26.04.2018  
-    }
-
     public void deleteElement(RoomWeatherEntity roomWeatherEntity) {
         model.deleteElementFromDatabase(roomWeatherEntity);
     }
