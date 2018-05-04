@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         View fragmentContainer = findViewById(R.id.main_container);
         if (fragmentContainer != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             transaction.addToBackStack(null);
             transaction.replace(R.id.main_container, fragment);
             transaction.commit();
